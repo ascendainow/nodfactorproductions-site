@@ -1201,7 +1201,7 @@
           <source src="https://s4.radio.co/s5bffec652/listen" type="audio/mpeg">
         </audio>
         <div class="radio-player" id="radioPlayer">
-          <button class="rp-playbtn" id="rpPlayBtn" onclick="toggleRadio()">
+          <button class="rp-playbtn" id="rpPlayBtn">
             <span id="rpIcon">▶</span>
           </button>
           <div class="rp-info">
@@ -1650,6 +1650,100 @@
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function() {
+  // ── Scroll reveal ──────────────────────────────────────────
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el) { observer.observe(el); });
+  } else {
+    reveals.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  // ── Radio player ───────────────────────────────────────────
+  function initRadio() {
+    var ra  = document.getElementById('radioStream');
+    var rs  = document.getElementById('rpStatus');
+    var ri  = document.getElementById('rpIcon');
+    var btn = document.getElementById('rpPlayBtn');
+    if (!ra || !btn) return;
+
+    function setPlaying() {
+      ri.textContent = '❚❚';
+      rs.textContent = '● ON AIR — Now Streaming';
+      rs.classList.add('playing');
+    }
+    function setPaused() {
+      ri.textContent = '▶';
+      rs.textContent = '● LIVE — Click to Play';
+      rs.classList.remove('playing');
+    }
+    function startRadio() {
+      ra.play().then(setPlaying).catch(setPaused);
+    }
+
+    btn.addEventListener('click', function() {
+      if (ra.paused) { startRadio(); } else { ra.pause(); setPaused(); }
+    });
+
+    ra.volume = 0.8;
+    startRadio();
+  }
+
+  // ── Contact form ───────────────────────────────────────────
+  function initForm() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res) {
+        if (res.ok) {
+          form.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.textContent = 'Error — Try Again';
+          btn.disabled = false;
+        }
+      }).catch(function() {
+        btn.textContent = 'Error — Try Again';
+        btn.disabled = false;
+      });
+    });
+  }
+
+  // ── Video modal ────────────────────────────────────────────
+  window.openVideo = function(url) {
+    document.getElementById('videoFrame').src = url;
+    document.getElementById('videoModal').style.display = 'flex';
+  };
+  window.closeVideo = function() {
+    document.getElementById('videoFrame').src = '';
+    document.getElementById('videoModal').style.display = 'none';
+  };
+
+  // ── Init on DOM ready ──────────────────────────────────────
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      initRadio();
+      initForm();
+    });
+  } else {
+    initRadio();
+    initForm();
+  }
+})();
+</script><script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -1661,41 +1755,37 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // Radio player autoplay
-  window.toggleRadio = function() {
-    const radioAudio = document.getElementById('radioStream');
-    const rpStatus = document.getElementById('rpStatus');
-    const rpIcon = document.getElementById('rpIcon');
-    if (radioAudio.paused) {
-      radioAudio.play().then(() => {
-        rpIcon.textContent = '❚❚';
-        rpStatus.textContent = '● ON AIR — Now Streaming';
-        rpStatus.classList.add('playing');
-      }).catch(() => {
-        rpStatus.textContent = '● Click Play to Stream';
-      });
-    } else {
-      radioAudio.pause();
-      rpIcon.textContent = '▶';
-      rpStatus.textContent = '● LIVE — Click to Play';
-      rpStatus.classList.remove('playing');
-    }
-  }
+  // Radio player — event listener only, no onclick
+  document.addEventListener('DOMContentLoaded', function() {
+    var ra = document.getElementById('radioStream');
+    var rs = document.getElementById('rpStatus');
+    var ri = document.getElementById('rpIcon');
+    var btn = document.getElementById('rpPlayBtn');
 
-  // Attempt autoplay on page load
-  window.addEventListener('load', () => {
-    const ra = document.getElementById('radioStream');
-    const rs = document.getElementById('rpStatus');
-    const ri = document.getElementById('rpIcon');
-    if (ra) {
-      ra.volume = 0.8;
-      ra.play().then(() => {
+    function startRadio() {
+      ra.play().then(function() {
         ri.textContent = '❚❚';
         rs.textContent = '● ON AIR — Now Streaming';
         rs.classList.add('playing');
-      }).catch(() => {
+      }).catch(function() {
         rs.textContent = '● LIVE — Click to Play';
       });
+    }
+
+    if (btn && ra) {
+      btn.addEventListener('click', function() {
+        if (ra.paused) {
+          startRadio();
+        } else {
+          ra.pause();
+          ri.textContent = '▶';
+          rs.textContent = '● LIVE — Click to Play';
+          rs.classList.remove('playing');
+        }
+      });
+      // Attempt autoplay
+      ra.volume = 0.8;
+      startRadio();
     }
   });
 
