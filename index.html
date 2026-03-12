@@ -323,6 +323,46 @@
     }
 
     /* ── RADIO PLAYER ── */
+    .radio-player {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(232,98,26,0.5);
+      border-radius: 50px;
+      padding: 0.6rem 1.2rem 0.6rem 0.6rem;
+    }
+    .rp-playbtn {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      border: 2px solid var(--orange);
+      background: var(--orange);
+      color: var(--dark);
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .rp-playbtn:hover { transform: scale(1.1); background: var(--yellow); border-color: var(--yellow); }
+    .rp-info { flex: 1; }
+    .rp-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      color: var(--yellow);
+    }
+    .rp-status {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+    .rp-status.playing { color: #4caf50; }
+    .rp-vol { display: flex; align-items: center; gap: 0.4rem; }
+
     .radio-section {
       background: linear-gradient(135deg, var(--brown) 0%, var(--dark) 100%);
       border: 2px solid var(--orange);
@@ -1155,13 +1195,25 @@
       <div class="radio-info">
         <h3>Tune In Live — 24/7</h3>
         <p>Soul · Funk · R&amp;B · Hip-Hop · Originals</p>
-        <!-- Nod Factor Radio - Live Stream -->
-        <iframe src="https://s4.radio.co/s5bffec652/listen" 
-          style="margin-top:1rem; border-radius:8px; display:block;" 
-          width="100%" height="120" frameborder="0" 
-          scrolling="no"
-          allow="autoplay">
-        </iframe>
+        <!-- Nod Factor Radio - Live Stream Autoplay -->
+        <audio id="radioStream" autoplay preload="none" style="display:none;">
+          <source src="https://s4.radio.co/s5bffec652/listen" type="audio/mpeg">
+        </audio>
+        <div class="radio-player" id="radioPlayer">
+          <button class="rp-playbtn" id="rpPlayBtn" onclick="toggleRadio()">
+            <span id="rpIcon">▶</span>
+          </button>
+          <div class="rp-info">
+            <div class="rp-title">NOD FACTOR RADIO</div>
+            <div class="rp-status" id="rpStatus">● LIVE — Click to Play</div>
+          </div>
+          <div class="rp-vol">
+            <span style="font-size:0.9rem;">🔊</span>
+            <input type="range" id="rpVol" min="0" max="1" step="0.05" value="0.8"
+              oninput="document.getElementById('radioStream').volume=this.value"
+              style="width:80px; accent-color:var(--orange); cursor:pointer;">
+          </div>
+        </div>
       </div>
     </div>
     <a href="https://s4.radio.co/s5bffec652/listen" target="_blank" class="soundcloud-btn">
@@ -1607,6 +1659,45 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
+
+  // Radio player autoplay
+  const radioAudio = document.getElementById('radioStream');
+  const rpStatus = document.getElementById('rpStatus');
+  const rpIcon = document.getElementById('rpIcon');
+  let radioPlaying = false;
+
+  function toggleRadio() {
+    if (radioPlaying) {
+      radioAudio.pause();
+      rpIcon.textContent = '▶';
+      rpStatus.textContent = '● LIVE — Click to Play';
+      rpStatus.classList.remove('playing');
+      radioPlaying = false;
+    } else {
+      radioAudio.play().then(() => {
+        rpIcon.textContent = '❚❚';
+        rpStatus.textContent = '● ON AIR — Now Streaming';
+        rpStatus.classList.add('playing');
+        radioPlaying = true;
+      }).catch(() => {
+        rpStatus.textContent = '● Click Play to Stream';
+      });
+    }
+  }
+
+  // Attempt autoplay on page load
+  window.addEventListener('load', () => {
+    radioAudio.volume = 0.8;
+    radioAudio.play().then(() => {
+      rpIcon.textContent = '❚❚';
+      rpStatus.textContent = '● ON AIR — Now Streaming';
+      rpStatus.classList.add('playing');
+      radioPlaying = true;
+    }).catch(() => {
+      // Autoplay blocked by browser — user must click play
+      rpStatus.textContent = '● LIVE — Click to Play';
+    });
+  });
 
   // Contact form — Formspree AJAX
   const contactForm = document.getElementById('contactForm');
