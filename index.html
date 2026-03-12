@@ -1662,42 +1662,41 @@
   reveals.forEach(el => observer.observe(el));
 
   // Radio player autoplay
-  const radioAudio = document.getElementById('radioStream');
-  const rpStatus = document.getElementById('rpStatus');
-  const rpIcon = document.getElementById('rpIcon');
-  let radioPlaying = false;
-
-  function toggleRadio() {
-    if (radioPlaying) {
-      radioAudio.pause();
-      rpIcon.textContent = '▶';
-      rpStatus.textContent = '● LIVE — Click to Play';
-      rpStatus.classList.remove('playing');
-      radioPlaying = false;
-    } else {
+  window.toggleRadio = function() {
+    const radioAudio = document.getElementById('radioStream');
+    const rpStatus = document.getElementById('rpStatus');
+    const rpIcon = document.getElementById('rpIcon');
+    if (radioAudio.paused) {
       radioAudio.play().then(() => {
         rpIcon.textContent = '❚❚';
         rpStatus.textContent = '● ON AIR — Now Streaming';
         rpStatus.classList.add('playing');
-        radioPlaying = true;
       }).catch(() => {
         rpStatus.textContent = '● Click Play to Stream';
       });
+    } else {
+      radioAudio.pause();
+      rpIcon.textContent = '▶';
+      rpStatus.textContent = '● LIVE — Click to Play';
+      rpStatus.classList.remove('playing');
     }
   }
 
   // Attempt autoplay on page load
   window.addEventListener('load', () => {
-    radioAudio.volume = 0.8;
-    radioAudio.play().then(() => {
-      rpIcon.textContent = '❚❚';
-      rpStatus.textContent = '● ON AIR — Now Streaming';
-      rpStatus.classList.add('playing');
-      radioPlaying = true;
-    }).catch(() => {
-      // Autoplay blocked by browser — user must click play
-      rpStatus.textContent = '● LIVE — Click to Play';
-    });
+    const ra = document.getElementById('radioStream');
+    const rs = document.getElementById('rpStatus');
+    const ri = document.getElementById('rpIcon');
+    if (ra) {
+      ra.volume = 0.8;
+      ra.play().then(() => {
+        ri.textContent = '❚❚';
+        rs.textContent = '● ON AIR — Now Streaming';
+        rs.classList.add('playing');
+      }).catch(() => {
+        rs.textContent = '● LIVE — Click to Play';
+      });
+    }
   });
 
   // Contact form — Formspree AJAX
