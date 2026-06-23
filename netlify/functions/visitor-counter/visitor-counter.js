@@ -1,6 +1,7 @@
 import { getStore } from "@netlify/blobs";
 
-const SEED = 175000;
+// Starting value used the first time the counter runs (no stored value yet).
+const SEED = 175125;
 const KEY = "count";
 
 export default async function handler(req, context) {
@@ -8,18 +9,18 @@ export default async function handler(req, context) {
   const headers = {
     "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
+    "Cache-Control": "no-store",
   };
 
   try {
-    const store = getStore("visitor-counter");
+    // Strong consistency so each visit reads the latest value before incrementing.
+    const store = getStore({ name: "visitor-counter", consistency: "strong" });
 
-    // Read current count (returns null if never set)
-    let current = await store.get(KEY, { type: "json" });
-    if (current === null) {
-      current = SEED;
-    }
+    // Read current count (returns null if never set).
+    const current = await store.get(KEY, { type: "json" });
 
-    const next = current + 1;
+    // First visit seeds at SEED; every subsequent visit increments by 1.
+    const next = current === null ? SEED : current + 1;
     await store.setJSON(KEY, next);
 
     return new Response(JSON.stringify({ count: next }), {

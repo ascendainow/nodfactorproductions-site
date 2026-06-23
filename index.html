@@ -1391,33 +1391,43 @@
   <!-- Visitor Counter -->
   <div id="visitor-counter" style="text-align:center;margin-top:18px;font-family:'Courier New',monospace;font-size:1.1rem;letter-spacing:2px;color:#c9a84c;">
     <span style="opacity:0.7;font-size:0.75rem;text-transform:uppercase;letter-spacing:3px;display:block;margin-bottom:4px;">Total Visitors</span>
-    <span id="visit-count" style="font-size:1.6rem;font-weight:bold;color:#f0c040;">175,000</span>
+    <span id="visit-count" style="font-size:1.6rem;font-weight:bold;color:#f0c040;">175,125</span>
   </div>
   <script>
     (function() {
-      var base = 175000;
+      var base = 175125;
       var el = document.getElementById('visit-count');
       if (!el) return;
-      var stored = parseInt(localStorage.getItem('nfp_visits') || base);
-      if (stored < base) stored = base;
-      stored++;
-      localStorage.setItem('nfp_visits', stored);
       function formatNum(n) {
         return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       }
-      var display = stored;
-      el.textContent = formatNum(display);
-      // Animate count up on page load
-      var start = stored - 50;
-      var step = 0;
-      var timer = setInterval(function() {
-        step++;
-        el.textContent = formatNum(start + step);
-        if (start + step >= stored) {
-          clearInterval(timer);
-          el.textContent = formatNum(stored);
-        }
-      }, 20);
+      function animateTo(target) {
+        var start = Math.max(base, target - 50);
+        el.textContent = formatNum(start);
+        var current = start;
+        var timer = setInterval(function() {
+          current++;
+          el.textContent = formatNum(current);
+          if (current >= target) {
+            clearInterval(timer);
+            el.textContent = formatNum(target);
+          }
+        }, 20);
+      }
+      // Pull the real, persisted count from the Netlify Function (Netlify Blobs).
+      fetch('/.netlify/functions/visitor-counter')
+        .then(function(res) { return res.json(); })
+        .then(function(data) {
+          if (data && typeof data.count === 'number') {
+            animateTo(data.count);
+          } else {
+            el.textContent = formatNum(base);
+          }
+        })
+        .catch(function() {
+          // Network/function unavailable — show the base figure.
+          el.textContent = formatNum(base);
+        });
     })();
   </script>
 </section>
