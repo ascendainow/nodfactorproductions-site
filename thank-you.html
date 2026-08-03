@@ -6,10 +6,13 @@
 <meta name="robots" content="noindex, nofollow">
 <title>You're In! | Nod Factor Radio VIP Rewards</title>
 <meta name="theme-color" content="#121417">
-undefined
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
 <style>
   .confirm{padding:76px 0}
-  .confirm .box{max-width:640px;margin-inline:auto;text-align:center;padding:46px 36px}
+  .confirm .box{max-width:660px;margin-inline:auto;text-align:center;padding:46px 38px}
   .tick{
     width:74px;height:74px;margin:0 auto 22px;border-radius:50%;
     display:grid;place-items:center;font-size:34px;color:var(--white);
@@ -17,9 +20,11 @@ undefined
     border:1px solid rgba(51,212,255,.42);
     box-shadow:0 0 44px rgba(51,212,255,.30);
   }
-  .next{margin-top:30px;text-align:left}
+  .confirm .divider{margin-inline:auto;background:linear-gradient(90deg,transparent,rgba(51,212,255,.6),rgba(154,91,255,.5),transparent)}
+  .confirm .lede{margin-inline:auto}
+  .next{margin-top:30px;text-align:left;list-style:none}
   .next li{
-    list-style:none;padding:13px 0 13px 26px;position:relative;
+    padding:13px 0 13px 26px;position:relative;
     border-bottom:1px solid var(--hairline);color:var(--platinum);font-size:15px;
   }
   .next li:last-child{border-bottom:0}
@@ -31,7 +36,22 @@ undefined
 </head>
 <body>
 
-undefined
+  <header class="nf-nav">
+    <div class="nf-nav-inner">
+      <a class="nf-brand" href="/">Nod <span>Factor</span></a>
+      <button class="nf-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nf-links"><span></span></button>
+      <nav class="nf-links" id="nf-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/#radio">Radio</a>
+        <a href="/#showroom">Media</a>
+        <a href="/rewards">Rewards</a>
+        <a href="/#contact">Booking</a>
+        <a href="https://store.nodfactorproductions.com" target="_blank" rel="noopener">Merch</a>
+      </nav>
+      <a class="btn btn-primary btn-sm nf-live" href="/#radio">Listen Live</a>
+    </div>
+  </header>
 
   <section class="confirm">
     <div class="wrap">
@@ -39,13 +59,13 @@ undefined
         <div class="tick" aria-hidden="true">&#10003;</div>
         <span class="eyebrow">VIP Rewards</span>
         <h1>You&rsquo;re In!</h1>
-        <hr class="divider" style="margin-inline:auto;background:linear-gradient(90deg,transparent,rgba(51,212,255,.6),rgba(154,91,255,.5),transparent)">
-        <p class="lede" style="margin-inline:auto">Thanks for joining the VIP Rewards program. You&rsquo;re officially part of the Nod Factor community.</p>
+        <hr class="divider">
+        <p class="lede">Thanks for joining the VIP Rewards program. You&rsquo;re officially part of the Nod Factor community.</p>
 
         <ul class="next">
           <li>Tune in to Nod Factor Radio and start racking up points.</li>
           <li>Request a song or grab a shoutout to earn faster.</li>
-          <li>If you opted in, your first name will show on the leaderboard.</li>
+          <li>If you opted in, your first name will appear on the leaderboard.</li>
         </ul>
 
         <div class="cta-row" style="justify-content:center">
@@ -56,7 +76,9 @@ undefined
     </div>
   </section>
 
-undefined
+  <footer class="nf-footer">
+    <div class="wrap">&copy; 2026 Nod Factor Productions &amp; Media &middot; Birmingham, AL</div>
+  </footer>
 
 <script src="/theme.js" defer></script>
 </body>
