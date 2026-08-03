@@ -1,0 +1,15 @@
+# Legacy standalone pages now live as sections of the one-page home site.
+# The trailing ! forces the redirect even though the old .html files still exist.
+
+/productions        /#services    301!
+/productions.html   /#services    301!
+
+/media              /#showroom    301!
+/media.html         /#showroom    301!
+
+/radio              /#radio       301!
+/radio.html         /#radio       301!
+
+# Not redirected on purpose:
+#   /about    - real page again, rebuilt with the founder bio and portrait
+#   /booking  - still hosts the live Netlify "booking" form
