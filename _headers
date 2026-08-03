@@ -1,0 +1,33 @@
+# Retired pages - hidden.
+# They already return 410 Gone via _redirects; this makes the
+# noindex explicit so search engines drop them even if they were
+# indexed before.
+
+/epk
+  X-Robots-Tag: noindex, nofollow, noarchive
+/epk.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+/partners
+  X-Robots-Tag: noindex, nofollow, noarchive
+/partners.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+/store
+  X-Robots-Tag: noindex, nofollow, noarchive
+/store.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+/index_old
+  X-Robots-Tag: noindex, nofollow, noarchive
+/index_old.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+/radio_old
+  X-Robots-Tag: noindex, nofollow, noarchive
+/radio_old.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+/410.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# Post-submit page should not be indexed either
+/thank-you
+  X-Robots-Tag: noindex, nofollow
+/thank-you.html
+  X-Robots-Tag: noindex, nofollow
