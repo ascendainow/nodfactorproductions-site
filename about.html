@@ -4,225 +4,134 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Pernard McCall | Nod Factor Productions</title>
-<meta name="description" content="Pernard McCall - Gospel Media Executive, Recording Artist and Media Minister, founder of Nod Factor Productions and Nod Factor Radio.">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Pernard McCall - Gospel Media Executive, Recording Artist and Media Minister, founder of Nod Factor Productions &amp; Media in Birmingham, Alabama.">
+<meta name="theme-color" content="#121417">
+undefined
 <style>
-  :root{
-    --bg:#0c1020;
-    --bg-2:#0f1428;
-    --panel:#111731;
-    --gold:#d4af37;
-    --gold-bright:#f4c542;
-    --text:#f3f1e9;
-    --muted:#9aa0b5;
-    --line:rgba(212,175,55,.35);
+  /* ---- About page specifics ---- */
+  .hero{position:relative;overflow:hidden;padding:88px 0 80px;border-bottom:1px solid var(--hairline)}
+  .hero-media{
+    position:absolute;inset:0;z-index:0;
+    background:url('/studio-on-air.jpg') center 26% / cover no-repeat;
+    opacity:.30;filter:saturate(.9);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    background:var(--bg);color:var(--text);
-    font-family:'Montserrat',Arial,sans-serif;font-weight:300;line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+  .hero-scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(180deg,rgba(18,20,23,.60) 0%,rgba(18,20,23,.88) 66%,var(--charcoal) 100%),
+      radial-gradient(55% 65% at 18% 26%,rgba(51,212,255,.14),transparent 66%),
+      radial-gradient(50% 60% at 84% 18%,rgba(154,91,255,.16),transparent 68%);
   }
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  .hero .wrap{position:relative;z-index:2}
 
-  nav{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:18px 24px;background:#0a0e1c;
-    border-bottom:1px solid var(--line);flex-wrap:wrap;gap:12px;
-  }
-  nav .brand{
-    font-family:'Cinzel',serif;font-weight:700;letter-spacing:1px;
-    color:var(--gold);font-size:18px;text-transform:uppercase;
-  }
-  nav .links{
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;
-  }
-  nav .links a{
-    display:inline-block;padding:8px 14px;border-radius:6px;
-    border:1px solid transparent;font-size:12px;font-weight:600;
-    letter-spacing:2px;text-transform:uppercase;color:var(--text);
-    transition:color .2s,border-color .2s,background .2s;
-  }
-  nav .links a:hover{
-    color:var(--gold);border-color:var(--line);background:rgba(212,175,55,.08);
-  }
-  nav .links a[aria-current="page"]{
-    color:var(--gold);border-color:var(--gold);background:rgba(212,175,55,.12);
-  }
-
-  header.hero{
-    background:linear-gradient(180deg,var(--bg-2),var(--bg));
-    border-bottom:1px solid var(--line);
-    padding:74px 0 60px;text-align:center;
-  }
-  .eyebrow{
-    color:var(--gold);font-size:12px;letter-spacing:6px;
-    text-transform:uppercase;margin-bottom:18px;
-  }
-  h1{
-    font-family:'Cinzel',serif;font-weight:700;color:var(--gold-bright);
-    font-size:clamp(32px,6vw,58px);letter-spacing:2px;
-    text-transform:uppercase;line-height:1.12;
-  }
-  .rule{width:120px;height:2px;background:var(--gold);margin:26px auto 0}
-
-  .bio{padding:70px 0}
-  .bio-grid{
-    display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);
-    gap:46px;align-items:center;
-  }
+  /* Founder */
+  .bio-grid{display:grid;grid-template-columns:320px 1fr;gap:34px;align-items:start}
   .portrait{
-    width:100%;height:auto;display:block;border-radius:14px;
-    border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.55);
+    width:100%;border-radius:var(--radius-lg);
+    border:1px solid var(--hairline-bright);
+    box-shadow:0 26px 60px rgba(0,0,0,.55), 0 0 44px rgba(76,130,255,.12);
   }
-  .bio h2{
-    font-family:'Cinzel',serif;font-size:24px;letter-spacing:1px;
-    text-transform:uppercase;color:var(--text);margin-bottom:8px;
+  .role{
+    font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--cyan);margin:8px 0 18px;
   }
-  .bio .role{
-    color:var(--gold);font-size:12px;letter-spacing:4px;
-    text-transform:uppercase;margin-bottom:22px;
+  .note{
+    margin-top:18px;padding:12px 16px;border-left:2px solid rgba(154,91,255,.6);
+    background:rgba(154,91,255,.07);border-radius:0 10px 10px 0;
+    font-size:14px;color:#A9B2BC;
   }
-  .bio p{color:var(--muted);font-size:16px;max-width:58ch}
-  .bio .note{
-    margin-top:26px;font-size:13px;
-    border-left:2px solid var(--line);padding-left:14px;
-  }
-  .cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
-  .btn{
-    display:inline-block;font-weight:600;letter-spacing:2px;
-    text-transform:uppercase;font-size:13px;padding:14px 28px;border-radius:6px;
-    border:1px solid var(--gold);transition:background .2s,color .2s,transform .18s;
-  }
-  .btn-primary{background:var(--gold);color:#111}
-  .btn-primary:hover{background:var(--gold-bright);transform:translateY(-2px)}
-  .btn-ghost{background:transparent;color:var(--gold)}
-  .btn-ghost:hover{background:rgba(212,175,55,.12)}
 
-  footer{
-    border-top:1px solid var(--line);background:#0a0e1c;
-    padding:30px 24px;text-align:center;color:var(--muted);font-size:13px;
+  /* Company */
+  .company{border-top:1px solid var(--hairline)}
+  .sub{
+    font-family:var(--font-display);font-size:15px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--lavender);margin:44px 0 0;
   }
-  footer a{color:var(--gold)}
-  footer a:hover{color:var(--gold-bright)}
-
+  .sub-rule{height:1px;max-width:200px;margin:12px 0 22px;background:linear-gradient(90deg,rgba(51,212,255,.6),rgba(154,91,255,.3),transparent)}
+  .list{list-style:none;max-width:70ch}
+  .list li{position:relative;padding:13px 0 13px 26px;border-bottom:1px solid var(--hairline);color:var(--platinum);font-size:15.5px}
+  .list li:last-child{border-bottom:0}
+  .list li::before{
+    content:"";position:absolute;left:2px;top:21px;width:8px;height:8px;border-radius:50%;
+    background:var(--cyan);box-shadow:0 0 12px rgba(51,212,255,.8);
+  }
+  .contact-strip{border-top:1px solid var(--hairline)}
+  .contact{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+  .contact li{padding:15px 17px;font-size:15px;color:var(--platinum)}
+  .contact .ci{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8D95A0;margin-bottom:5px}
+  .tagline{
+    margin-top:30px;text-align:center;font-family:var(--font-display);
+    font-style:italic;font-size:clamp(16px,2.2vw,22px);font-weight:600;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
   @media (max-width:860px){
-    .bio-grid{grid-template-columns:1fr;gap:30px;justify-items:center;text-align:center}
-    .bio p{margin:0 auto}
-    .bio .note{border-left:0;border-top:2px solid var(--line);padding:14px 0 0}
-    .cta{justify-content:center}
+    .bio-grid{grid-template-columns:1fr;gap:24px}
     .portrait{max-width:300px}
   }
-  @media (max-width:720px){
-    nav{padding:14px 16px;justify-content:center;gap:10px}
-    nav .brand{width:100%;text-align:center;font-size:16px}
-    nav .links{justify-content:center}
-    nav .links a{padding:7px 11px;font-size:11px;letter-spacing:1.5px}
-    header.hero{padding:54px 0 44px}
-    .bio{padding:50px 0}
-  }
-
-    .company{padding:64px 0;background:var(--bg-2);border-top:1px solid var(--line)}
-    .sec-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.4vw,38px);line-height:1.15;margin:6px 0 0;color:var(--text);letter-spacing:.5px}
-    .company .rule{margin:18px 0 22px}
-    .company .lede{font-size:17px;line-height:1.75;color:var(--text);max-width:70ch;margin:0 0 14px}
-    .company p{font-size:16px;line-height:1.8;color:var(--muted);max-width:70ch;margin:0 0 14px}
-    .sub{font-family:'Cinzel',serif;font-size:20px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-bright);margin:38px 0 6px}
-    .sub-rule{height:1px;background:linear-gradient(90deg,var(--gold),rgba(212,175,55,0));margin:0 0 22px;max-width:220px}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:8px}
-    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;transition:border-color .18s ease,transform .18s ease}
-    .card:hover{border-color:var(--gold);transform:translateY(-2px)}
-    .card h4{margin:0 0 8px;font-family:'Cinzel',serif;font-size:16px;letter-spacing:.6px;color:var(--gold-bright)}
-    .card p{margin:0;font-size:14.5px;line-height:1.7;color:var(--muted)}
-    .list{list-style:none;margin:8px 0 0;padding:0;max-width:70ch}
-    .list li{position:relative;padding:12px 0 12px 26px;border-bottom:1px solid var(--line);color:var(--text);font-size:15.5px;line-height:1.7}
-    .list li:last-child{border-bottom:0}
-    .list li::before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
-    .contact-strip{padding:56px 0 66px;background:var(--bg);border-top:1px solid var(--line)}
-    .contact{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-    .contact li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px;color:var(--text)}
-    .contact .ci{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
-    .contact a{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(244,197,66,.35)}
-    .contact a:hover{border-bottom-color:var(--gold-bright)}
-    .tagline{margin:28px 0 0;font-family:'Cinzel',serif;font-style:italic;font-size:clamp(16px,2.2vw,21px);color:var(--gold);text-align:center}
-    @media (max-width:720px){
-      .company{padding:44px 0}
-      .contact-strip{padding:40px 0 50px}
-      .sub{font-size:17px;margin-top:30px}
-    }
-  </style>
+</style>
 </head>
 <body>
 
-<nav>
-  <div class="brand">Nod Factor Productions</div>
-  <div class="links">
-    <a href="/">Home</a>
-    <a href="/about" aria-current="page">About</a>
-    <a href="/#services">Productions</a>
-    <a href="/#radio">Radio</a>
-    <a href="/#showroom">Media</a>
-    <a href="/#contact">Booking</a>
-    <a href="/rewards">Rewards</a>
-  </div>
-</nav>
+undefined
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Nod Factor Productions &amp; Media</div>
-    <h1>About Pernard McCall</h1>
-    <div class="rule"></div>
-  </div>
-</header>
+  <header class="hero">
+    <div class="hero-media" role="presentation"></div>
+    <div class="hero-scrim" role="presentation"></div>
+    <div class="wrap">
+      <span class="eyebrow">Nod Factor Productions &amp; Media</span>
+      <h1>About Pernard McCall</h1>
+      <hr class="divider">
+    </div>
+  </header>
 
-<section class="bio">
-  <div class="wrap">
-    <div class="bio-grid">
-      <img class="portrait" src="pernard-mccall.jpg" alt="Portrait of Pernard McCall, founder of Nod Factor Productions">
-      <div>
-        <h2>Pernard McCall</h2>
-        <div class="role">Founder &middot; Gospel Media Executive</div>
-        <p>Pernard McCall is a Gospel Media Executive, Recording Artist, and Media Minister serving faithfully each Sunday while building Nod Factor Productions and Nod Factor Radio.</p>
-        <p class="note">A fuller biography is on the way &mdash; check back soon.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="/#contact">Work With Nod Factor</a>
-          <a class="btn btn-ghost" href="/#radio">Listen to the Radio</a>
+  <section class="bio">
+    <div class="wrap">
+      <div class="bio-grid">
+        <img class="portrait" src="pernard-mccall.jpg" alt="Portrait of Pernard McCall, founder of Nod Factor Productions" width="640" height="800">
+        <div>
+          <h2>Pernard McCall</h2>
+          <div class="role">Founder &middot; Gospel Media Executive</div>
+          <p class="lede">Pernard McCall is a Gospel Media Executive, Recording Artist, and Media Minister serving faithfully each Sunday while building Nod Factor Productions and Nod Factor Radio.</p>
+          <p class="note">A fuller biography is on the way &mdash; check back soon.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/#contact">Work With Nod Factor</a>
+            <a class="btn btn-ghost" href="/#radio">Listen to the Radio</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="company">
+  <section class="company">
     <div class="wrap">
-      <div class="eyebrow">Nod Factor Productions &amp; Media</div>
-      <h2 class="sec-title">Where Retro Soul Meets Future Sound</h2>
-      <div class="rule"></div>
+      <span class="eyebrow">Nod Factor Productions &amp; Media</span>
+      <h2>Where Retro Soul Meets Future Sound</h2>
+      <hr class="divider">
 
       <p class="lede">Nod Factor Productions &amp; Media is a Birmingham, Alabama&ndash;based independent music, radio, and media company founded by veteran producer and artist DaNod Factor (Pernard / Nod Factor).</p>
-      <p>Rooted in over 40 years of music production experience, the company specializes in soulful R&amp;B, gospel, jazz, funk, and contemporary sounds with a strong &ldquo;grown folks&rdquo; vibe. The mission is simple and clear: bring music back to music &mdash; creating powerful, purposeful work that moves people.</p>
+      <p style="max-width:70ch;margin-top:14px">Rooted in over 40 years of music production experience, the company specializes in soulful R&amp;B, gospel, jazz, funk, and contemporary sounds with a strong &ldquo;grown folks&rdquo; vibe. The mission is simple and clear: bring music back to music &mdash; creating powerful, purposeful work that moves people.</p>
 
       <h3 class="sub">What Nod Factor Productions Does</h3>
       <div class="sub-rule"></div>
-      <div class="cards">
-        <div class="card">
+      <div class="grid grid-3">
+        <div class="glass card">
           <h4>Music Production &amp; Artist Development</h4>
           <p>Full production, recording, and artist development for original tracks, soundtracks, and independent artists.</p>
         </div>
-        <div class="card">
+        <div class="glass card">
           <h4>Nod Factor Radio</h4>
           <p>24/7 online radio station broadcasting Soul, Funk, R&amp;B, Hip-Hop, Gospel, Jazz, and originals.</p>
         </div>
-        <div class="card">
+        <div class="glass card">
           <h4>Video &amp; Media</h4>
           <p>Music videos, commercials, jingles, short films, animated brand stories, and promotional content.</p>
         </div>
-        <div class="card">
+        <div class="glass card">
           <h4>Custom Content Services</h4>
           <p>Fast-turnaround custom jingles, animated commercials, and branded storytelling packages.</p>
         </div>
-        <div class="card">
+        <div class="glass card">
           <h4>Direct-to-Artist Sales</h4>
           <p>E-commerce platform for independent music sales and artist support.</p>
         </div>
@@ -238,27 +147,27 @@
 
       <h3 class="sub">Based In Birmingham, Available Worldwide</h3>
       <div class="sub-rule"></div>
-      <p>Nod Factor Productions blends classic soulful foundations with modern production and media tools to create work that feels authentic, intentional, and built to last.</p>
+      <p style="max-width:70ch">Nod Factor Productions blends classic soulful foundations with modern production and media tools to create work that feels authentic, intentional, and built to last.</p>
     </div>
   </section>
 
   <section class="contact-strip">
     <div class="wrap">
-      <h3 class="sub" style="margin-top:0">Contact</h3>
-      <div class="sub-rule"></div>
+      <span class="eyebrow eyebrow-lav">Contact</span>
+      <h2>Get In Touch</h2>
+      <hr class="divider">
       <ul class="contact">
-        <li><span class="ci">Location</span> Birmingham, AL</li>
-        <li><span class="ci">Email</span> <a href="mailto:danodfactor@gmail.com">danodfactor@gmail.com</a></li>
-        <li><span class="ci">Phone</span> <a href="tel:+12055980659">(205) 598-0659</a></li>
-        <li><span class="ci">Web</span> <a href="https://nodfactorproductions.com/">nodfactorproductions.com</a></li>
+        <li class="glass"><span class="ci">Location</span> Birmingham, AL</li>
+        <li class="glass"><span class="ci">Email</span> <a href="mailto:danodfactor@gmail.com">danodfactor@gmail.com</a></li>
+        <li class="glass"><span class="ci">Phone</span> <a href="tel:+12055980659">(205) 598-0659</a></li>
+        <li class="glass"><span class="ci">Web</span> <a href="https://nodfactorproductions.com/">nodfactorproductions.com</a></li>
       </ul>
       <p class="tagline">&ldquo;The nod is always the factor in the music.&rdquo;</p>
     </div>
   </section>
 
-  <footer>
-    &copy; 2026 Nod Factor Productions &amp; Media &middot; Birmingham, AL
-  </footer>
+undefined
 
+<script src="/theme.js" defer></script>
 </body>
 </html>
