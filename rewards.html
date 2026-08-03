@@ -38,11 +38,27 @@
     font-family:'Cinzel',serif;font-weight:700;letter-spacing:1px;
     color:var(--gold);font-size:18px;text-transform:uppercase;
   }
-  nav .links a{
-    margin-left:22px;font-size:13px;letter-spacing:2px;
-    text-transform:uppercase;color:var(--text);transition:color .2s;
+  nav .links{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-end;gap:8px;
   }
-  nav .links a:hover{color:var(--gold)}
+  nav .links a{
+    display:inline-block;padding:8px 14px;border-radius:6px;
+    border:1px solid transparent;font-size:12px;font-weight:600;
+    letter-spacing:2px;text-transform:uppercase;color:var(--text);
+    transition:color .2s,border-color .2s,background .2s;
+  }
+  nav .links a:hover{
+    color:var(--gold);border-color:var(--line);background:rgba(212,175,55,.08);
+  }
+  nav .links a[aria-current="page"]{
+    color:var(--gold);border-color:var(--gold);background:rgba(212,175,55,.12);
+  }
+  @media (max-width:720px){
+    nav{padding:14px 16px;justify-content:center;gap:10px}
+    nav .brand{width:100%;text-align:center;font-size:16px}
+    nav .links{justify-content:center}
+    nav .links a{padding:7px 11px;font-size:11px;letter-spacing:1.5px}
+  }
 
   /* HERO */
   .hero{
@@ -161,7 +177,7 @@
     <a href="radio.html">Radio</a>
     <a href="media.html">Media</a>
     <a href="booking.html">Booking</a>
-    <a href="rewards.html">Rewards</a>
+    <a href="rewards.html" aria-current="page">Rewards</a>
   </div>
 </nav>
 
