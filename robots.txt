@@ -1,0 +1,19 @@
+User-agent: *
+
+# Retired pages - hidden. These also return 410 Gone and carry a noindex header.
+Disallow: /epk
+Disallow: /epk.html
+Disallow: /partners
+Disallow: /partners.html
+Disallow: /store
+Disallow: /store.html
+Disallow: /index_old
+Disallow: /index_old.html
+Disallow: /radio_old
+Disallow: /radio_old.html
+Disallow: /410.html
+
+# Internal endpoints and post-submit pages
+Disallow: /api/
+Disallow: /thank-you
+Disallow: /thank-you.html
