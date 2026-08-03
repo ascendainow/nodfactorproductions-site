@@ -1,15 +1,32 @@
 # Legacy standalone pages now live as sections of the one-page home site.
 # The trailing ! forces the redirect even though the old .html files still exist.
 
-/productions        /#services    301!
-/productions.html   /#services    301!
+/productions        /#services      301!
+/productions.html   /#services      301!
 
-/media              /#showroom    301!
-/media.html         /#showroom    301!
+/media              /#showroom      301!
+/media.html         /#showroom      301!
 
-/radio              /#radio       301!
-/radio.html         /#radio       301!
+/radio              /#radio         301!
+/radio.html         /#radio         301!
+
+/booking            /#contact       301!
+/booking.html       /#contact       301!
+
+# Retired pages - hidden, NOT redirected.
+# They return 410 Gone with a short notice page so that neither a visitor
+# nor a crawler is ever silently sent to unrelated content.
+
+/epk                /410.html       410!
+/epk.html           /410.html       410!
+/partners           /410.html       410!
+/partners.html      /410.html       410!
+/store              /410.html       410!
+/store.html         /410.html       410!
+/index_old          /410.html       410!
+/index_old.html     /410.html       410!
+/radio_old          /410.html       410!
+/radio_old.html     /410.html       410!
 
 # Not redirected on purpose:
-#   /about    - real page again, rebuilt with the founder bio and portrait
-#   /booking  - still hosts the live Netlify "booking" form
+#   /about  - real page, rebuilt with the founder bio, portrait and company profile
