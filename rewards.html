@@ -136,6 +136,18 @@
     text-align:center;padding:44px 24px;color:var(--muted);font-size:13px;
     letter-spacing:1px;border-top:1px solid var(--line);margin-top:30px;
   }
+
+    /* --- VIP Rewards leaderboard --- */
+    #leaderboard .lb-note{color:var(--muted);font-size:.82rem;letter-spacing:.04em;margin:0 0 20px}
+    .lb-list{list-style:none;max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+    .lb-row{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+    .lb-row .lb-rank{font-family:'Cinzel',serif;font-weight:700;color:var(--gold);min-width:2.4em;text-align:left}
+    .lb-row .lb-name{flex:1;text-align:left;color:var(--text)}
+    .lb-row .lb-pts{color:var(--gold-bright);font-weight:600;white-space:nowrap}
+    .lb-row.lb-top{border-color:var(--gold);box-shadow:0 0 18px rgba(212,175,55,.15)}
+    .lb-empty{color:var(--muted);padding:14px;font-size:.9rem}
+    .lb-optin{display:flex;align-items:flex-start;gap:9px;color:var(--muted);font-size:.78rem;line-height:1.45;text-align:left;margin:2px 0 8px}
+    .lb-optin input{width:auto;margin:2px 0 0}
 </style>
 </head>
 <body>
@@ -193,6 +205,16 @@
   </div>
 </section>
 
+<section id="leaderboard">
+  <div class="wrap">
+    <div class="sec-eyebrow">Top VIPs</div>
+    <h2 class="sec-title">Leaderboard</h2>
+    <div class="sec-rule"></div>
+    <p class="lb-note">The most engaged listeners in the Nod Factor family. Opt in when you join to appear here.</p>
+    <ol id="lb-list" class="lb-list"><li class="lb-empty">Loading the board&hellip;</li></ol>
+  </div>
+</section>
+
 <section>
   <div class="wrap">
     <div class="sec-eyebrow">The Rewards</div>
@@ -224,6 +246,7 @@
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
+      <label class="lb-optin"><input type="checkbox" name="leaderboard_optin" value="yes"> Show my first name on the public leaderboard</label>
       <button type="submit">Join Rewards Program</button>
     </form>
     <p class="tag" style="text-align:center;font-size:13px;margin-top:14px;">Free to join. Unsubscribe anytime.</p>
@@ -232,5 +255,53 @@
 
 <footer>© 2026 Danod Factor | Nod Factor Productions</footer>
 
+<script>
+(function () {
+  var list = document.getElementById('lb-list');
+  if (!list) return;
+
+  function message(text) {
+    list.textContent = '';
+    var li = document.createElement('li');
+    li.className = 'lb-empty';
+    li.textContent = text;
+    list.appendChild(li);
+  }
+
+  function render(rows) {
+    if (!rows || !rows.length) {
+      message('No one on the board yet - join below and start earning.');
+      return;
+    }
+    list.textContent = '';
+    rows.forEach(function (row) {
+      var li = document.createElement('li');
+      li.className = row.rank <= 3 ? 'lb-row lb-top' : 'lb-row';
+
+      var rank = document.createElement('span');
+      rank.className = 'lb-rank';
+      rank.textContent = '#' + row.rank;
+
+      var name = document.createElement('span');
+      name.className = 'lb-name';
+      name.textContent = row.name;
+
+      var pts = document.createElement('span');
+      pts.className = 'lb-pts';
+      pts.textContent = row.points + ' pts';
+
+      li.appendChild(rank);
+      li.appendChild(name);
+      li.appendChild(pts);
+      list.appendChild(li);
+    });
+  }
+
+  fetch('/api/leaderboard', { headers: { accept: 'application/json' } })
+    .then(function (r) { return r.json(); })
+    .then(function (data) { render(data && data.top); })
+    .catch(function () { message('Leaderboard is taking a break - check back soon.'); });
+})();
+</script>
 </body>
 </html>
