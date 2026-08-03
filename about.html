@@ -122,7 +122,36 @@
     header.hero{padding:54px 0 44px}
     .bio{padding:50px 0}
   }
-</style>
+
+    .company{padding:64px 0;background:var(--bg-2);border-top:1px solid var(--line)}
+    .sec-title{font-family:'Cinzel',serif;font-size:clamp(24px,3.4vw,38px);line-height:1.15;margin:6px 0 0;color:var(--text);letter-spacing:.5px}
+    .company .rule{margin:18px 0 22px}
+    .company .lede{font-size:17px;line-height:1.75;color:var(--text);max-width:70ch;margin:0 0 14px}
+    .company p{font-size:16px;line-height:1.8;color:var(--muted);max-width:70ch;margin:0 0 14px}
+    .sub{font-family:'Cinzel',serif;font-size:20px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-bright);margin:38px 0 6px}
+    .sub-rule{height:1px;background:linear-gradient(90deg,var(--gold),rgba(212,175,55,0));margin:0 0 22px;max-width:220px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:8px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;transition:border-color .18s ease,transform .18s ease}
+    .card:hover{border-color:var(--gold);transform:translateY(-2px)}
+    .card h4{margin:0 0 8px;font-family:'Cinzel',serif;font-size:16px;letter-spacing:.6px;color:var(--gold-bright)}
+    .card p{margin:0;font-size:14.5px;line-height:1.7;color:var(--muted)}
+    .list{list-style:none;margin:8px 0 0;padding:0;max-width:70ch}
+    .list li{position:relative;padding:12px 0 12px 26px;border-bottom:1px solid var(--line);color:var(--text);font-size:15.5px;line-height:1.7}
+    .list li:last-child{border-bottom:0}
+    .list li::before{content:"";position:absolute;left:2px;top:20px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+    .contact-strip{padding:56px 0 66px;background:var(--bg);border-top:1px solid var(--line)}
+    .contact{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .contact li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px;color:var(--text)}
+    .contact .ci{display:block;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+    .contact a{color:var(--gold-bright);text-decoration:none;border-bottom:1px solid rgba(244,197,66,.35)}
+    .contact a:hover{border-bottom-color:var(--gold-bright)}
+    .tagline{margin:28px 0 0;font-family:'Cinzel',serif;font-style:italic;font-size:clamp(16px,2.2vw,21px);color:var(--gold);text-align:center}
+    @media (max-width:720px){
+      .company{padding:44px 0}
+      .contact-strip{padding:40px 0 50px}
+      .sub{font-size:17px;margin-top:30px}
+    }
+  </style>
 </head>
 <body>
 
@@ -165,7 +194,69 @@
   </div>
 </section>
 
-<footer>
+<section class="company">
+    <div class="wrap">
+      <div class="eyebrow">Nod Factor Productions &amp; Media</div>
+      <h2 class="sec-title">Where Retro Soul Meets Future Sound</h2>
+      <div class="rule"></div>
+
+      <p class="lede">Nod Factor Productions &amp; Media is a Birmingham, Alabama&ndash;based independent music, radio, and media company founded by veteran producer and artist DaNod Factor (Pernard / Nod Factor).</p>
+      <p>Rooted in over 40 years of music production experience, the company specializes in soulful R&amp;B, gospel, jazz, funk, and contemporary sounds with a strong &ldquo;grown folks&rdquo; vibe. The mission is simple and clear: bring music back to music &mdash; creating powerful, purposeful work that moves people.</p>
+
+      <h3 class="sub">What Nod Factor Productions Does</h3>
+      <div class="sub-rule"></div>
+      <div class="cards">
+        <div class="card">
+          <h4>Music Production &amp; Artist Development</h4>
+          <p>Full production, recording, and artist development for original tracks, soundtracks, and independent artists.</p>
+        </div>
+        <div class="card">
+          <h4>Nod Factor Radio</h4>
+          <p>24/7 online radio station broadcasting Soul, Funk, R&amp;B, Hip-Hop, Gospel, Jazz, and originals.</p>
+        </div>
+        <div class="card">
+          <h4>Video &amp; Media</h4>
+          <p>Music videos, commercials, jingles, short films, animated brand stories, and promotional content.</p>
+        </div>
+        <div class="card">
+          <h4>Custom Content Services</h4>
+          <p>Fast-turnaround custom jingles, animated commercials, and branded storytelling packages.</p>
+        </div>
+        <div class="card">
+          <h4>Direct-to-Artist Sales</h4>
+          <p>E-commerce platform for independent music sales and artist support.</p>
+        </div>
+      </div>
+
+      <h3 class="sub">Signature Projects</h3>
+      <div class="sub-rule"></div>
+      <ul class="list">
+        <li>Original motion picture soundtrack <em>A Sister&rsquo;s Choice</em> (released March 2026)</li>
+        <li>Ongoing artist roster spanning R&amp;B, neo-soul, gospel, hip-hop, and more</li>
+        <li>Live choir recordings, commercials, and multimedia campaigns</li>
+      </ul>
+
+      <h3 class="sub">Based In Birmingham, Available Worldwide</h3>
+      <div class="sub-rule"></div>
+      <p>Nod Factor Productions blends classic soulful foundations with modern production and media tools to create work that feels authentic, intentional, and built to last.</p>
+    </div>
+  </section>
+
+  <section class="contact-strip">
+    <div class="wrap">
+      <h3 class="sub" style="margin-top:0">Contact</h3>
+      <div class="sub-rule"></div>
+      <ul class="contact">
+        <li><span class="ci">Location</span> Birmingham, AL</li>
+        <li><span class="ci">Email</span> <a href="mailto:danodfactor@gmail.com">danodfactor@gmail.com</a></li>
+        <li><span class="ci">Phone</span> <a href="tel:+12055980659">(205) 598-0659</a></li>
+        <li><span class="ci">Web</span> <a href="https://nodfactorproductions.com/">nodfactorproductions.com</a></li>
+      </ul>
+      <p class="tagline">&ldquo;The nod is always the factor in the music.&rdquo;</p>
+    </div>
+  </section>
+
+  <footer>
   &copy; 2026 Danod Factor | Nod Factor Productions | <a href="/privacy-policy.html">Privacy Policy</a>
 </footer>
 
