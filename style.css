@@ -1,14 +1,14 @@
 
 :root{
-  --black:#000;
+  --black:#D3D7DA;
   --gold:#0047AB;
-  --navy:#0B1A2F;
-  --white:#ffffff;
+  --navy:#B9C0C6;
+  --white:#16202B;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Montserrat',sans-serif;background:var(--black);color:var(--white);line-height:1.6;}
 h1,h2,h3{font-family:'Cinzel',serif;letter-spacing:1px;}
-nav{background:rgba(0,0,0,.95);padding:20px 8%;position:fixed;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;}
+nav{background:rgba(211,215,218,.95);padding:20px 8%;position:fixed;width:100%;z-index:1000;display:flex;justify-content:space-between;align-items:center;}
 nav a{color:var(--white);margin-left:20px;text-decoration:none;}
 nav a:hover{color:var(--gold);}
 section{padding:120px 10%;}
