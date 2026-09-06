@@ -1,34 +1,193 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | Danod Factor</title>
-<link rel="stylesheet" href="assets/css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<title>About Pernard McCall | Nod Factor Productions</title>
+<meta name="description" content="Pernard McCall - Gospel Media Executive, Recording Artist and Media Minister, founder of Nod Factor Productions &amp; Media in Birmingham, Alabama.">
+<meta name="theme-color" content="#121417">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/theme.css">
+<style>
+  /* ---- About page specifics ---- */
+  .hero{position:relative;overflow:hidden;padding:88px 0 80px;border-bottom:1px solid var(--hairline)}
+  .hero-media{
+    position:absolute;inset:0;z-index:0;
+    background:url('/studio-on-air.jpg') center 26% / cover no-repeat;
+    opacity:.30;filter:saturate(.9);
+  }
+  .hero-scrim{
+    position:absolute;inset:0;z-index:1;
+    background:
+      linear-gradient(180deg,rgba(18,20,23,.60) 0%,rgba(18,20,23,.88) 66%,var(--charcoal) 100%),
+      radial-gradient(55% 65% at 18% 26%,rgba(51,212,255,.14),transparent 66%),
+      radial-gradient(50% 60% at 84% 18%,rgba(154,91,255,.16),transparent 68%);
+  }
+  .hero .wrap{position:relative;z-index:2}
+
+  /* Founder */
+  .bio-grid{display:grid;grid-template-columns:320px 1fr;gap:34px;align-items:start}
+  .portrait{
+    width:100%;border-radius:var(--radius-lg);
+    border:1px solid var(--hairline-bright);
+    box-shadow:0 26px 60px rgba(0,0,0,.55), 0 0 44px rgba(76,130,255,.12);
+  }
+  .role{
+    font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--cyan);margin:8px 0 18px;
+  }
+  .note{
+    margin-top:18px;padding:12px 16px;border-left:2px solid rgba(154,91,255,.6);
+    background:rgba(154,91,255,.07);border-radius:0 10px 10px 0;
+    font-size:14px;color:#A9B2BC;
+  }
+
+  /* Company */
+  .company{border-top:1px solid var(--hairline)}
+  .sub{
+    font-family:var(--font-display);font-size:15px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--lavender);margin:44px 0 0;
+  }
+  .sub-rule{height:1px;max-width:200px;margin:12px 0 22px;background:linear-gradient(90deg,rgba(51,212,255,.6),rgba(154,91,255,.3),transparent)}
+  .list{list-style:none;max-width:70ch}
+  .list li{position:relative;padding:13px 0 13px 26px;border-bottom:1px solid var(--hairline);color:var(--platinum);font-size:15.5px}
+  .list li:last-child{border-bottom:0}
+  .list li::before{
+    content:"";position:absolute;left:2px;top:21px;width:8px;height:8px;border-radius:50%;
+    background:var(--cyan);box-shadow:0 0 12px rgba(51,212,255,.8);
+  }
+  .contact-strip{border-top:1px solid var(--hairline)}
+  .contact{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+  .contact li{padding:15px 17px;font-size:15px;color:var(--platinum)}
+  .contact .ci{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8D95A0;margin-bottom:5px}
+  .tagline{
+    margin-top:30px;text-align:center;font-family:var(--font-display);
+    font-style:italic;font-size:clamp(16px,2.2vw,22px);font-weight:600;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  @media (max-width:860px){
+    .bio-grid{grid-template-columns:1fr;gap:24px}
+    .portrait{max-width:300px}
+  }
+</style>
 </head>
 <body>
-<nav>
-<div><strong>Danod Factor</strong></div>
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="productions.html">Productions</a>
-<a href="radio.html">Radio</a>
-<a href="media.html">Media</a>
-<a href="booking.html">Booking</a>
-<a href="rewards.html">Rewards</a>
-</div>
-</nav>
 
-<section>
-<h2>About Pernard McCall</h2>
-<div class="gold-divider"></div>
-<p>Pernard McCall is a Gospel Media Executive, Recording Artist, and Media Minister serving faithfully each Sunday while building Nod Factor Productions and Nod Factor Radio.</p>
-<img src="assets/images/The Artist.jpg" style="width:100%;max-width:500px;margin-top:30px;">
-</section>
+  <header class="nf-nav">
+    <div class="nf-nav-inner">
+      <a class="nf-brand" href="/">Nod <span>Factor</span></a>
+      <button class="nf-burger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nf-links"><span></span></button>
+      <nav class="nf-links" id="nf-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/#radio">Radio</a>
+        <a href="/#showroom">Media</a>
+        <a href="/rewards">Rewards</a>
+        <a href="/#contact">Booking</a>
+        <a href="https://store.nodfactorproductions.com" target="_blank" rel="noopener">Merch</a>
+      </nav>
+      <a class="btn btn-primary btn-sm nf-live" href="/#radio">Listen Live</a>
+    </div>
+  </header>
 
-<footer>© 2026 Danod Factor | Nod Factor Productions</footer>
+  <header class="hero">
+    <div class="hero-media" role="presentation"></div>
+    <div class="hero-scrim" role="presentation"></div>
+    <div class="wrap">
+      <span class="eyebrow">Nod Factor Productions &amp; Media</span>
+      <h1>About Pernard McCall</h1>
+      <hr class="divider">
+    </div>
+  </header>
+
+  <section class="bio">
+    <div class="wrap">
+      <div class="bio-grid">
+        <img class="portrait" src="pernard-mccall.jpg" alt="Portrait of Pernard McCall, founder of Nod Factor Productions" width="640" height="800">
+        <div>
+          <h2>Pernard McCall</h2>
+          <div class="role">Founder &middot; Gospel Media Executive</div>
+          <p class="lede">Pernard McCall is a Gospel Media Executive, Recording Artist, and Media Minister serving faithfully each Sunday while building Nod Factor Productions and Nod Factor Radio.</p>
+          <p class="note">A fuller biography is on the way &mdash; check back soon.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/#contact">Work With Nod Factor</a>
+            <a class="btn btn-ghost" href="/#radio">Listen to the Radio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="company">
+    <div class="wrap">
+      <span class="eyebrow">Nod Factor Productions &amp; Media</span>
+      <h2>Where Retro Soul Meets Future Sound</h2>
+      <hr class="divider">
+
+      <p class="lede">Nod Factor Productions &amp; Media is a Birmingham, Alabama&ndash;based independent music, radio, and media company founded by veteran producer and artist DaNod Factor (Pernard / Nod Factor).</p>
+      <p style="max-width:70ch;margin-top:14px">Rooted in over 40 years of music production experience, the company specializes in soulful R&amp;B, gospel, jazz, funk, and contemporary sounds with a strong &ldquo;grown folks&rdquo; vibe. The mission is simple and clear: bring music back to music &mdash; creating powerful, purposeful work that moves people.</p>
+
+      <h3 class="sub">What Nod Factor Productions Does</h3>
+      <div class="sub-rule"></div>
+      <div class="grid grid-3">
+        <div class="glass card">
+          <h4>Music Production &amp; Artist Development</h4>
+          <p>Full production, recording, and artist development for original tracks, soundtracks, and independent artists.</p>
+        </div>
+        <div class="glass card">
+          <h4>Nod Factor Radio</h4>
+          <p>24/7 online radio station broadcasting Soul, Funk, R&amp;B, Hip-Hop, Gospel, Jazz, and originals.</p>
+        </div>
+        <div class="glass card">
+          <h4>Video &amp; Media</h4>
+          <p>Music videos, commercials, jingles, short films, animated brand stories, and promotional content.</p>
+        </div>
+        <div class="glass card">
+          <h4>Custom Content Services</h4>
+          <p>Fast-turnaround custom jingles, animated commercials, and branded storytelling packages.</p>
+        </div>
+        <div class="glass card">
+          <h4>Direct-to-Artist Sales</h4>
+          <p>E-commerce platform for independent music sales and artist support.</p>
+        </div>
+      </div>
+
+      <h3 class="sub">Signature Projects</h3>
+      <div class="sub-rule"></div>
+      <ul class="list">
+        <li>Original motion picture soundtrack <em>A Sister&rsquo;s Choice</em> (released March 2026)</li>
+        <li>Ongoing artist roster spanning R&amp;B, neo-soul, gospel, hip-hop, and more</li>
+        <li>Live choir recordings, commercials, and multimedia campaigns</li>
+      </ul>
+
+      <h3 class="sub">Based In Birmingham, Available Worldwide</h3>
+      <div class="sub-rule"></div>
+      <p style="max-width:70ch">Nod Factor Productions blends classic soulful foundations with modern production and media tools to create work that feels authentic, intentional, and built to last.</p>
+    </div>
+  </section>
+
+  <section class="contact-strip">
+    <div class="wrap">
+      <span class="eyebrow eyebrow-lav">Contact</span>
+      <h2>Get In Touch</h2>
+      <hr class="divider">
+      <ul class="contact">
+        <li class="glass"><span class="ci">Location</span> Birmingham, AL</li>
+        <li class="glass"><span class="ci">Email</span> <a href="mailto:danodfactor@gmail.com">danodfactor@gmail.com</a></li>
+        <li class="glass"><span class="ci">Phone</span> <a href="tel:+12055980659">(205) 598-0659</a></li>
+        <li class="glass"><span class="ci">Web</span> <a href="https://nodfactorproductions.com/">nodfactorproductions.com</a></li>
+      </ul>
+      <p class="tagline">&ldquo;The nod is always the factor in the music.&rdquo;</p>
+    </div>
+  </section>
+
+  <footer class="nf-footer">
+    <div class="wrap">&copy; 2026 Nod Factor Productions &amp; Media &middot; Birmingham, AL</div>
+  </footer>
+
+<script src="/theme.js" defer></script>
 </body>
 </html>
