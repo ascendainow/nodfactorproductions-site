@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nod Factor Radio</title>
-<style>
-body{font-family:Arial,sans-serif;background:#000;color:#fff;text-align:center;padding:80px 10%}
-a{color:#d4af37}
-audio{width:100%;max-width:700px}
-</style>
-</head>
-<body>
-<h1>Nod Factor Radio Live</h1>
-<p>Streaming live now.</p>
-<audio controls>
-<source src="https://s4.radio.co/s5bffec652/listen" type="audio/mpeg">
-</audio>
-<p><a href="https://s4.radio.co/s5bffec652/listen" target="_blank">Open direct stream</a></p>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#070810"><meta name="description" content="Listen live to Nod Factor Radio: soul, funk, R&B, hip-hop and original music."><title>Nod Factor Radio | Live</title><link rel="stylesheet" href="style.css"></head><body class="radio-page">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="site-brand" href="index.html" aria-label="Nod Factor Productions home"><strong>NOD FACTOR</strong><small>PRODUCTIONS &amp; MEDIA</small></a>
+  <nav class="site-links" aria-label="Primary navigation">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="productions.html">Studio</a><a href="media.html">Media</a><a href="radio.html" aria-current="page">Radio</a><a href="store.html">Da Store</a><a href="rewards.html">Rewards</a><a href="booking.html">Booking</a>
+  </nav><a class="site-header-cta" href="booking.html">Book Danod</a>
+</header><main class="site-main" id="main"><section class="page-hero"><div class="page-hero-copy"><span class="page-kicker">Live Broadcast · 24/7</span><h1>Nod Factor Radio</h1><p>Soul · Funk · R&amp;B · Hip-Hop · Originals</p><div class="page-actions"><a class="btn btn-primary" href="#listen">Listen Live</a><a class="btn btn-ghost" href="rewards.html">Join VIP Rewards</a></div></div></section><section class="section-block" id="listen"><div class="radio-player"><span class="live-badge"><span class="live-dot"></span>Live Stream</span><h2 class="section-heading">Music with a message and a story.</h2><p class="section-intro">Your browser will try to start the stream when this page opens. If sound is blocked, press Play once to begin listening.</p><audio id="liveStream" controls autoplay preload="none" playsinline aria-label="Nod Factor Radio live audio"><source src="https://s4.radio.co/s5bffec652/listen" type="audio/mpeg"></audio><p id="playStatus" class="form-note" role="status" aria-live="polite">Connecting to Nod Factor Radio…</p><p class="form-note">If the player does not load, <a href="https://s4.radio.co/s5bffec652/listen" target="_blank" rel="noopener noreferrer">open the direct stream ↗</a>.</p></div></section></main><footer class="site-footer"><div><div class="footer-brand">NOD FACTOR PRODUCTIONS &amp; MEDIA</div><div>Retro Soul · Future Sound · Real Craft</div><div>© 2026 Nod Factor Productions &amp; Media</div></div><div class="footer-links"><a href="epk.html">Press Kit</a><a href="partners.html">Partnerships</a><a href="privacy-policy.html">Privacy</a><a href="rewards.html">VIP Rewards</a></div></footer>
+<script>
+(()=>{const audio=document.getElementById('liveStream'),status=document.getElementById('playStatus');if(!audio)return;let started=false;const sayBlocked=()=>{if(!started)status.textContent='Your browser blocked sound on start. Press Play to listen.'};const start=()=>{if(started||!audio.paused)return;const p=audio.play();if(p&&p.then)p.then(()=>{started=true;status.textContent='You are listening to Nod Factor Radio live.'}).catch(sayBlocked)};audio.addEventListener('playing',()=>{started=true;status.textContent='You are listening to Nod Factor Radio live.'});audio.addEventListener('error',()=>{status.textContent='The live stream is temporarily unavailable. Try the direct stream link.'});start();document.addEventListener('click',start,{capture:true,once:true});document.addEventListener('keydown',start,{capture:true,once:true})})();
+</script></body></html>

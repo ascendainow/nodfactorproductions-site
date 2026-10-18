@@ -10,29 +10,29 @@
     :root {
       --brown: #0D1117;
       --brown-mid: #1C2333;
-      --brown-light: #B8973A;
-      --orange: #C9982A;
-      --orange-warm: #E4B84A;
-      --yellow: #F0D060;
-      --yellow-pale: #F7E9B0;
+      --brown-light: #7A8289;
+      --orange: #7A8289;
+      --orange-warm: #646C73;
+      --yellow: #646C73;
+      --yellow-pale: #D9DCDF;
       --green: #1C3A2E;
       --green-light: #2E6B50;
       --cream: #F5EDD6;
       --cream-dark: #E8D9B0;
       --dark: #080C10;
       --groove-line: repeating-linear-gradient(
-        90deg, transparent, transparent 2px, rgba(201,152,42,0.10) 2px, rgba(201,152,42,0.10) 4px
+        90deg, transparent, transparent 2px, rgba(122,130,137,0.10) 2px, rgba(122,130,137,0.10) 4px
       );
       /* Luxury extras */
-      --gold: #C9982A;
-      --gold-bright: #F0D060;
-      --gold-dim: #8A6A1A;
+      --gold: #7A8289;
+      --gold-bright: #646C73;
+      --gold-dim: #596168;
       --navy: #0D1B2A;
       --navy-mid: #162036;
       --navy-light: #1E2D4A;
       --obsidian: #080C10;
       --champagne: #F5EDD6;
-      --champagne-dark: #D4B87A;
+      --champagne-dark: #646C73;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -105,7 +105,7 @@
       position: absolute;
       inset: 0;
       background: 
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201,152,42,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(122,130,137,0.18) 0%, transparent 70%),
         linear-gradient(180deg, rgba(8,12,16,0.2) 0%, rgba(8,12,16,0.7) 60%, rgba(8,12,16,1) 100%);
     }
 
@@ -310,7 +310,7 @@
       transition: background 0.2s;
     }
 
-    .mixer-fader:hover { background: rgba(240,208,96,0.1); }
+    .mixer-fader:hover { background: rgba(122,130,137,0.1); }
 
     .fader-track {
       width: 4px;
@@ -348,7 +348,7 @@
       gap: 1rem;
       margin-top: 1.2rem;
       background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(201,152,42,0.5);
+      border: 1px solid rgba(122,130,137,0.5);
       border-radius: 50px;
       padding: 0.6rem 1.2rem 0.6rem 0.6rem;
     }
@@ -367,7 +367,7 @@
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
     }
-    .rp-playbtn:hover { transform: scale(1.1); background: var(--yellow); border-color: var(--gold-bright); box-shadow: 0 0 40px rgba(240,208,96,0.15); }
+    .rp-playbtn:hover { transform: scale(1.1); background: var(--yellow); border-color: var(--gold-bright); box-shadow: 0 0 40px rgba(122,130,137,0.15); }
     .rp-info { flex: 1; }
     .rp-title {
       font-family: 'Bebas Neue', sans-serif;
@@ -382,7 +382,7 @@
       letter-spacing: 0.08em;
       margin-top: 2px;
     }
-    .rp-status.playing { color: #C9982A; }
+    .rp-status.playing { color: #7A8289; }
     .rp-vol { display: flex; align-items: center; gap: 0.4rem; }
 
     .radio-section {
@@ -467,7 +467,7 @@
 
     .track-card {
       background: linear-gradient(145deg, rgba(13,27,42,0.6), rgba(8,12,16,0.9));
-      border: 1px solid rgba(201,152,42,0.3);
+      border: 1px solid rgba(122,130,137,0.3);
       border-radius: 8px;
       padding: 1.5rem;
       position: relative;
@@ -542,10 +542,10 @@
       width: 80px; height: 80px;
       border-radius: 50%;
       background: 
-        radial-gradient(circle at 50% 50%, var(--brown-mid) 18%, var(--dark) 19%, var(--dark) 22%, rgba(255,200,80,0.1) 23%, rgba(255,200,80,0.1) 24%, var(--dark) 25%,
-        var(--dark) 37%, rgba(255,200,80,0.05) 38%, rgba(255,200,80,0.05) 39%, var(--dark) 40%,
-        var(--dark) 51%, rgba(255,200,80,0.05) 52%, rgba(255,200,80,0.05) 53%, var(--dark) 54%);
-      border: 1px solid rgba(201,152,42,0.4);
+        radial-gradient(circle at 50% 50%, var(--brown-mid) 18%, var(--dark) 19%, var(--dark) 22%, rgba(122,130,137,0.1) 23%, rgba(122,130,137,0.1) 24%, var(--dark) 25%,
+        var(--dark) 37%, rgba(122,130,137,0.05) 38%, rgba(122,130,137,0.05) 39%, var(--dark) 40%,
+        var(--dark) 51%, rgba(122,130,137,0.05) 52%, rgba(122,130,137,0.05) 53%, var(--dark) 54%);
+      border: 1px solid rgba(122,130,137,0.4);
       position: absolute;
       top: -20px; right: -20px;
       opacity: 0.4;
@@ -600,7 +600,7 @@
     }
 
     .show-card:hover .show-card-overlay {
-      background: linear-gradient(0deg, rgba(8,12,16,0.6) 0%, rgba(201,152,42,0.2) 100%);
+      background: linear-gradient(0deg, rgba(8,12,16,0.6) 0%, rgba(122,130,137,0.2) 100%);
     }
 
     .show-card-info h4 {
@@ -727,7 +727,7 @@
     }
 
     .price-card {
-      border: 1px solid rgba(201,152,42,0.3);
+      border: 1px solid rgba(122,130,137,0.3);
       border-radius: 12px;
       padding: 2rem 1.8rem;
       background: linear-gradient(160deg, rgba(13,27,42,0.35), rgba(8,12,16,0.8));
@@ -740,12 +740,12 @@
     .price-card:hover {
       border-color: var(--orange);
       transform: translateY(-5px);
-      box-shadow: 0 12px 40px rgba(201,152,42,0.2);
+      box-shadow: 0 12px 40px rgba(122,130,137,0.2);
     }
     .price-card.featured {
       border-color: var(--orange);
-      background: linear-gradient(160deg, rgba(201,152,42,0.15), rgba(13,27,42,0.6));
-      box-shadow: 0 0 30px rgba(201,152,42,0.15);
+      background: linear-gradient(160deg, rgba(122,130,137,0.15), rgba(13,27,42,0.6));
+      box-shadow: 0 0 30px rgba(122,130,137,0.15);
     }
     .price-card::before {
       content: '';
@@ -768,14 +768,14 @@
       padding: 3px 10px;
       border-radius: 20px;
       margin-bottom: 1rem;
-      background: rgba(201,152,42,0.2);
+      background: rgba(122,130,137,0.2);
       color: var(--orange);
-      border: 1px solid rgba(201,152,42,0.4);
+      border: 1px solid rgba(122,130,137,0.4);
     }
     .pc-badge.hot {
-      background: rgba(201,152,42,0.35);
+      background: rgba(122,130,137,0.35);
       color: var(--yellow);
-      border-color: var(--gold-bright); box-shadow: 0 0 40px rgba(240,208,96,0.15);
+      border-color: var(--gold-bright); box-shadow: 0 0 40px rgba(122,130,137,0.15);
     }
 
     .pc-title {
@@ -798,7 +798,7 @@
     .pc-price .pc-per {
       font-family: 'IBM Plex Mono', monospace;
       font-size: 0.75rem;
-      color: rgba(240,208,96,0.7);
+      color: rgba(122,130,137,0.7);
       letter-spacing: 0.05em;
       display: block;
       margin-top: 0.2rem;
@@ -814,7 +814,7 @@
 
     .pc-divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(201,152,42,0.4), transparent);
+      background: linear-gradient(90deg, transparent, rgba(122,130,137,0.4), transparent);
       margin-bottom: 1.2rem;
     }
 
@@ -841,7 +841,7 @@
       font-size: 0.75rem;
     }
     .pc-features li.note {
-      color: rgba(240,208,96,0.7);
+      color: rgba(122,130,137,0.7);
       font-style: italic;
       font-size: 0.78rem;
     }
@@ -876,7 +876,7 @@
       margin-bottom: 2rem;
     }
     .addon-card {
-      border: 1px solid rgba(240,208,96,0.2);
+      border: 1px solid rgba(122,130,137,0.2);
       border-radius: 8px;
       padding: 1.2rem 1.5rem;
       background: rgba(8,12,16,0.6);
@@ -885,7 +885,7 @@
       gap: 1rem;
       transition: border-color 0.3s;
     }
-    .addon-card:hover { border-color: var(--gold-bright); box-shadow: 0 0 40px rgba(240,208,96,0.15); }
+    .addon-card:hover { border-color: var(--gold-bright); box-shadow: 0 0 40px rgba(122,130,137,0.15); }
     .addon-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
     .addon-info h4 {
       font-family: 'Bebas Neue', sans-serif;
@@ -926,7 +926,7 @@
       gap: 1.5rem;
     }
     .service-card {
-      border: 1px solid rgba(201,152,42,0.3);
+      border: 1px solid rgba(122,130,137,0.3);
       border-radius: 8px;
       padding: 2.5rem 2rem;
       background: linear-gradient(145deg, rgba(13,27,42,0.3), rgba(8,12,16,0.7));
@@ -1027,7 +1027,7 @@
 
     .form-input {
       background: rgba(13,27,42,0.6);
-      border: 1px solid rgba(201,152,42,0.4);
+      border: 1px solid rgba(122,130,137,0.4);
       color: var(--cream);
       padding: 0.9rem 1rem;
       font-family: 'IBM Plex Mono', monospace;
@@ -1071,7 +1071,7 @@
       justify-content: center;
       width: 44px; height: 44px;
       border-radius: 50%;
-      border: 1px solid rgba(201,152,42,0.5);
+      border: 1px solid rgba(122,130,137,0.5);
       background: rgba(13,27,42,0.4);
       color: var(--cream);
       text-decoration: none;
@@ -1083,7 +1083,7 @@
       border-color: var(--orange);
       color: var(--dark);
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(201,152,42,0.35);
+      box-shadow: 0 6px 20px rgba(122,130,137,0.35);
     }
     .social-link svg {
       width: 20px; height: 20px;
@@ -1207,7 +1207,7 @@
     }
 
     .gold-text {
-      background: linear-gradient(90deg, #8A6A1A, #C9982A, #F0D060, #F7E9B0, #F0D060, #C9982A, #8A6A1A);
+      background: linear-gradient(90deg, #596168, #7A8289, #646C73, #D9DCDF, #646C73, #7A8289, #596168);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1217,19 +1217,19 @@
 
     /* ── LUXURY CARD GLOW ── */
     .price-card:hover, .track-card:hover, .addon-card:hover {
-      box-shadow: 0 8px 40px rgba(201,152,42,0.2), 0 2px 8px rgba(201,152,42,0.1);
+      box-shadow: 0 8px 40px rgba(122,130,137,0.2), 0 2px 8px rgba(122,130,137,0.1);
     }
 
     /* ── GOLD DIVIDER LINE ── */
     .tape-strip {
-      background: linear-gradient(90deg, transparent, #C9982A 20%, #F0D060 50%, #C9982A 80%, transparent) !important;
+      background: linear-gradient(90deg, transparent, #7A8289 20%, #646C73 50%, #7A8289 80%, transparent) !important;
       height: 1px !important;
       opacity: 0.6;
     }
 
     /* ── LUXURY BUTTON ── */
     .btn-primary, .pc-cta {
-      background: linear-gradient(135deg, #8A6A1A, #C9982A, #F0D060, #C9982A) !important;
+      background: linear-gradient(135deg, #596168, #7A8289, #646C73, #7A8289) !important;
       background-size: 200% auto !important;
       color: #080C10 !important;
       border: none !important;
@@ -1240,18 +1240,18 @@
     .btn-primary:hover, .pc-cta:hover {
       background-position: right center !important;
       transform: translateY(-2px) !important;
-      box-shadow: 0 8px 30px rgba(201,152,42,0.4) !important;
+      box-shadow: 0 8px 30px rgba(122,130,137,0.4) !important;
     }
 
     /* ── MIXER BAR GOLD FADERS ── */
-    .fader-track { background: rgba(201,152,42,0.15) !important; }
-    .fader-thumb { background: linear-gradient(180deg, #F0D060, #C9982A) !important; box-shadow: 0 0 8px rgba(201,152,42,0.5) !important; }
+    .fader-track { background: rgba(122,130,137,0.15) !important; }
+    .fader-thumb { background: linear-gradient(180deg, #646C73, #7A8289) !important; box-shadow: 0 0 8px rgba(122,130,137,0.5) !important; }
 
     /* ── NAV LINKS GOLD HOVER ── */
-    .nav-link { color: #D4B87A !important; }
-    .nav-link:hover { color: #F0D060 !important; }
+    .nav-link { color: #646C73 !important; }
+    .nav-link:hover { color: #646C73 !important; }
     .nav-brand { 
-      background: linear-gradient(90deg, #C9982A, #F0D060, #C9982A);
+      background: linear-gradient(90deg, #7A8289, #646C73, #7A8289);
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1261,8 +1261,8 @@
 
     /* ── SOCIAL LINKS GOLD ── */
     .social-link:hover {
-      background: linear-gradient(135deg, #8A6A1A, #C9982A) !important;
-      border-color: #F0D060 !important;
+      background: linear-gradient(135deg, #596168, #7A8289) !important;
+      border-color: #646C73 !important;
     }
 
     
@@ -1285,6 +1285,127 @@
     .pandora-icon  { background: transparent; }
 
     </style>
+<style id="neutral-color-scheme">
+:root {
+  --bg: #070817;
+  --ink: #fff4f1;
+  --muted: #b5bad2;
+  --line: #27315e;
+  --dark: #050611;
+  --accent: #8b45ff;
+  --green: #245eff;
+  --brown: #080b1c;
+  --brown-mid: #121735;
+  --brown-light: #50aaff;
+  --orange: #8b45ff;
+  --orange-warm: #c23aff;
+  --yellow: #fff4f1;
+  --yellow-pale: #ffd8d2;
+  --green-light: #49cfff;
+  --cream: #fff4f1;
+  --cream-dark: #c5c7df;
+  --gold: #8b45ff;
+  --gold-bright: #30a8ff;
+  --gold-dim: #513b9d;
+  --navy: #07091b;
+  --navy-mid: #111638;
+  --navy-light: #1a2b68;
+  --obsidian: #050611;
+  --champagne: #fff4f1;
+  --champagne-dark: #ffd8d2;
+  --groove-line: repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(47,126,255,.13) 2px, rgba(47,126,255,.13) 4px);
+}
+body { background: radial-gradient(ellipse at 12% 18%, rgba(37,104,255,.22), transparent 34%), radial-gradient(ellipse at 86% 22%, rgba(151,49,255,.21), transparent 34%), linear-gradient(160deg, #050611 0%, #0a1030 55%, #050611 100%) !important; color: #fff4f1 !important; }
+header { background: #050611 !important; color: #fff4f1 !important; }
+.hero-bg video { filter: brightness(.98) saturate(1.85) contrast(1.1) !important; }
+.hero-overlay {
+  background:
+    radial-gradient(ellipse 78% 60% at 50% 42%, rgba(40,104,255,.36) 0%, transparent 70%),
+    radial-gradient(ellipse 65% 50% at 78% 28%, rgba(142,52,255,.34) 0%, transparent 72%),
+    linear-gradient(180deg, rgba(5,6,17,.06) 0%, rgba(5,6,17,.40) 62%, rgba(5,6,17,.84) 100%) !important;
+}
+.hero-title { color: #fff4f1 !important; text-shadow: 0 0 24px rgba(45,113,255,.38), 3px 3px 0 rgba(18,23,53,.8), 0 8px 28px rgba(0,0,0,.55) !important; }
+.hero-subtitle { color: #d8ccff !important; }
+.hero-tagline { color: #ffd8d2 !important; }
+.logo-badge { background: #245eff !important; color: #fff !important; box-shadow: 0 0 22px rgba(36,94,255,.45); }
+.hero-divider { background: linear-gradient(90deg, transparent, #2f7dff, #a245ff, #ff5268, transparent) !important; }
+.mixer-bar { background: linear-gradient(90deg, #080b1c, #111638 48%, #22134b 72%, #080b1c) !important; border-bottom-color: #347cff !important; box-shadow: 0 5px 24px rgba(39,82,255,.22); color: #fff4f1; }
+.mixer-logo, .nav-link, .fader-label { color: #fff4f1 !important; }
+.mixer-bar .nav-brand { background-image: linear-gradient(90deg, #fff4f1, #7ccaff, #d2a5ff, #fff4f1) !important; }
+.radio-player { border-color: rgba(66,153,255,.68) !important; box-shadow: 0 0 22px rgba(42,107,255,.16); }
+.radio-player .rp-title, .radio-player .rp-status, .rp-playbtn { color: #fff4f1 !important; }
+.nav-link:hover { color: #c89bff !important; }
+.nav-btn { border-color: #428cff !important; color: #fff4f1 !important; box-shadow: inset 0 0 14px rgba(41,102,255,.08); }
+.nav-btn.primary { background: linear-gradient(110deg, #245eff, #8843ff) !important; border-color: #5597ff !important; color: #fff !important; box-shadow: 0 0 22px rgba(70,93,255,.35); }
+.nav-btn::before { background: linear-gradient(110deg, #245eff, #a13bff) !important; }
+.nav-btn:hover, .nav-btn.primary:hover { color: #fff !important; }
+.soundtrack-banner, .presale-banner {
+  background: linear-gradient(135deg, rgba(11,15,39,.96), rgba(29,15,54,.95)) !important;
+  border: 1px solid rgba(93,143,255,.72) !important;
+  color: #fff4f1 !important;
+  box-shadow: 0 0 28px rgba(54,93,255,.18), inset 0 0 28px rgba(145,58,255,.08);
+}
+.soundtrack-banner > div:nth-child(2), .presale-banner > div:nth-child(2) {
+  background-image: linear-gradient(90deg, #327dff, #a145ff, #ff5268, #a145ff, #327dff) !important;
+}
+.presale-banner a { background: linear-gradient(110deg, #245eff, #8b45ff) !important; color: #fff !important; }
+.section-title, .radio-info h3, .service-card h3, .contact-info h3,
+.track-title, .addon-info h4, .pc-title { color: #fff4f1 !important; text-shadow: 0 0 16px rgba(77,117,255,.2); }
+.artist-name, .show-card-info h4 { color: #fff4f1 !important; }
+.artist-type, .show-card-info span { color: #c8c9e5 !important; }
+.section-label, .track-number, .form-label, .footer-link { color: #65b5ff !important; }
+.section-line { background: linear-gradient(90deg, #2878ff, #a145ff, #ff5268) !important; box-shadow: 0 0 14px rgba(69,113,255,.42); }
+.radio-section, .track-card, .price-card, .addon-card, .service-card {
+  color: #fff4f1 !important;
+  background: linear-gradient(145deg, rgba(15,21,53,.96), rgba(7,9,27,.98)) !important;
+  border-color: rgba(73,139,255,.58) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,.28), inset 0 0 20px rgba(87,56,194,.08);
+}
+.radio-section { border-color: #4b8dff !important; box-shadow: 0 0 28px rgba(48,100,255,.18), inset 0 0 30px rgba(140,58,255,.08) !important; }
+.radio-section::before { color: #ff4058 !important; text-shadow: 0 0 12px rgba(255,49,77,.65); }
+.radio-info p, .track-genre, .pc-desc, .pc-features li, .addon-info p,
+.service-card p, .contact-info p, .pricing-note, .footer-tagline { color: #c5c7df !important; }
+.track-card::after { background: linear-gradient(180deg, #327dff, #a145ff, #ff5268) !important; }
+.track-card:hover, .price-card:hover, .addon-card:hover, .service-card:hover { border-color: #a145ff !important; box-shadow: 0 0 26px rgba(123,75,255,.24) !important; }
+.price-card.featured { background: linear-gradient(145deg, #151b42, #160e32) !important; border-color: #b34dff !important; box-shadow: 0 0 30px rgba(150,62,255,.22) !important; }
+.pc-price, .addon-price { color: #65baff !important; }
+.pc-badge, .pc-badge.hot { background: rgba(47,125,255,.2) !important; color: #e9e1ff !important; border-color: rgba(153,93,255,.7) !important; box-shadow: 0 0 12px rgba(120,69,255,.18) !important; }
+.ai-badge { background: #823dff !important; color: #fff !important; }
+.btn-primary, .pc-cta, .buy-btn, .submit-btn, .soundcloud-btn,
+.contact-detail .icon { background: linear-gradient(110deg, #245eff, #8b45ff) !important; color: #fff !important; border-color: #5796ff !important; box-shadow: 0 5px 20px rgba(63,91,255,.28); }
+.btn-primary:hover, .pc-cta:hover, .buy-btn:hover, .submit-btn:hover, .soundcloud-btn:hover { background: linear-gradient(110deg, #397bff, #a83eff) !important; box-shadow: 0 0 25px rgba(125,63,255,.45); }
+.form-input { background: #0b1030 !important; color: #fff4f1 !important; border-color: #344b91 !important; }
+.form-input::placeholder { color: #a9aecb !important; }
+.social-link { background: #101633 !important; border-color: #354b8c !important; color: #f7efff !important; }
+.social-link:hover { background: linear-gradient(110deg, #245eff, #8b45ff) !important; color: #fff !important; border-color: #a65bff !important; }
+footer { background: linear-gradient(105deg, #060714, #111633 55%, #1a1034) !important; border-top-color: #387dff !important; }
+.footer-logo, footer .footer-link { color: #fff4f1 !important; }
+footer .footer-tagline, footer .footer-copy, footer .footer-credit { color: #c5c7df !important; }
+footer .footer-credit a { color: #8ecbff !important; }
+.tape-strip { background: linear-gradient(90deg, transparent, #327dff, #a145ff, #ff5268, transparent) !important; }
+.gold-text, .nav-brand { background-image: linear-gradient(90deg, #6fbaff, #8b45ff, #ff697d, #8b45ff, #6fbaff) !important; }
+.fader-track { background: rgba(58,122,255,.28) !important; }
+.fader-thumb { background: linear-gradient(180deg, #39adff, #8b45ff) !important; box-shadow: 0 0 12px rgba(71,133,255,.54) !important; }
+</style>
+<style id="nod-factor-network">
+.mixer-logo{color:#fff4f1!important;text-decoration:none!important;white-space:nowrap}
+.mixer-faders{gap:.35rem;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin}
+.mixer-fader{min-width:52px}
+.ecosystem-section{max-width:1400px!important;padding:5rem 2rem!important}
+.ecosystem-intro{max-width:720px;margin:16px auto 0;color:#c5c7df}
+.ecosystem-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.ecosystem-card{position:relative;isolation:isolate;display:flex;min-height:310px;flex-direction:column;justify-content:flex-end;overflow:hidden;border:1px solid rgba(246,214,143,.32);border-radius:18px;background:#101426;color:#fff;text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,.34);transition:transform .22s,border-color .22s,box-shadow .22s}
+.ecosystem-card::after{content:"";position:absolute;inset:20% 0 0;background:linear-gradient(180deg,transparent 0%,rgba(5,6,14,.48) 35%,rgba(5,6,14,.97) 100%);z-index:-1}
+.ecosystem-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .45s,filter .3s;filter:saturate(1.2)}
+.ecosystem-card:hover{transform:translateY(-5px);border-color:#ff7897;box-shadow:0 18px 45px rgba(145,92,255,.22)}
+.ecosystem-card:hover img{transform:scale(1.04);filter:saturate(1.4)}
+.ecosystem-label{padding:0 17px;color:#fff4f1;font:600 17px/1.2 'Cinzel',serif}
+.ecosystem-meta{padding:7px 17px 0;color:#e4d6c5;font:600 9px/1.4 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+.ecosystem-action{padding:16px 17px 18px;color:#f6d68f;font:600 10px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:1000px){.ecosystem-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.ecosystem-card{min-height:270px}}
+@media(max-width:680px){.mixer-bar{align-items:flex-start;gap:10px;padding:.7rem 1rem}.mixer-logo{font-size:1rem!important}.mixer-faders{width:100%;justify-content:flex-start}.ecosystem-section{padding:4rem 1rem!important}.ecosystem-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ecosystem-card{min-height:230px}.ecosystem-label{font-size:14px}}
+@media(max-width:420px){.ecosystem-grid{grid-template-columns:1fr}.ecosystem-card{min-height:250px}}
+</style>
 </head>
 <body>
 
@@ -1316,35 +1437,14 @@
 </header>
 
 <!-- STICKY MIXER NAV -->
-<nav class="mixer-bar">
-  <div class="mixer-logo">NOD FACTOR PRODUCTIONS</div>
-  <div class="mixer-faders">
-    <a href="#music" class="mixer-fader">
-      <div class="fader-track"><div class="fader-knob"></div></div>
-      <span class="fader-label">Music</span>
-    </a>
-    <a href="#radio" class="mixer-fader">
-      <div class="fader-track"><div class="fader-knob"></div></div>
-      <span class="fader-label">Radio</span>
-    </a>
-    <a href="#showroom" class="mixer-fader">
-      <div class="fader-track"><div class="fader-knob"></div></div>
-      <span class="fader-label">Video</span>
-    </a>
-    <a href="#artists" class="mixer-fader">
-      <div class="fader-track"><div class="fader-knob"></div></div>
-      <span class="fader-label">Artists</span>
-    </a>
-    <a href="#services" class="mixer-fader">
-      <div class="fader-track"><div class="fader-knob"></div></div>
-      <span class="fader-label">Services</span>
-    </a>
-    <a href="#contact" class="mixer-fader">
-      <div class="fader-track"><div class="fader-knob"></div></div>
-      <span class="fader-label">Contact</span>
-    </a>
-  </div>
-</nav>
+<nav class="mixer-bar" aria-label="Primary navigation"><a class="mixer-logo" href="index.html" aria-label="Nod Factor Productions home">NOD FACTOR PRODUCTIONS</a><div class="mixer-faders">
+<a href="about.html" class="mixer-fader"><div class="fader-track"><div class="fader-knob"></div></div><span class="fader-label">About</span></a>
+<a href="productions.html" class="mixer-fader"><div class="fader-track"><div class="fader-knob"></div></div><span class="fader-label">Studio</span></a>
+<a href="media.html" class="mixer-fader"><div class="fader-track"><div class="fader-knob"></div></div><span class="fader-label">Media</span></a>
+<a href="radio.html" class="mixer-fader"><div class="fader-track"><div class="fader-knob"></div></div><span class="fader-label">Radio</span></a>
+<a href="store.html" class="mixer-fader"><div class="fader-track"><div class="fader-knob"></div></div><span class="fader-label">Da Store</span></a>
+<a href="rewards.html" class="mixer-fader"><div class="fader-track"><div class="fader-knob"></div></div><span class="fader-label">Rewards</span></a>
+<a href="booking.html" class="mixer-fader"><div class="fader-track"><div class="fader-knob"></div></div><span class="fader-label">Book</span></a></div></nav>
 
 <!-- RADIO -->
 <section id="radio" style="max-width:1300px; margin:0 auto; padding:6rem 2rem;">
@@ -1410,20 +1510,20 @@
   <div class="tracks-grid">
 
     <!-- Soundtrack debut announcement -->
-    <div class="soundtrack-banner reveal" style="grid-column:1/-1; text-align:center; padding:1.8rem 2rem; margin-bottom:1rem; background:linear-gradient(135deg,rgba(22,32,54,0.9),rgba(8,12,16,0.97)); border:1px solid rgba(201,152,42,0.4); border-radius:12px; position:relative; overflow:hidden;">
-      <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(201,152,42,0.04) 2px,rgba(201,152,42,0.04) 4px);pointer-events:none;"></div>
+    <div class="soundtrack-banner reveal" style="grid-column:1/-1; text-align:center; padding:1.8rem 2rem; margin-bottom:1rem; background:linear-gradient(135deg,rgba(22,32,54,0.9),rgba(8,12,16,0.97)); border:1px solid rgba(122,130,137,0.4); border-radius:12px; position:relative; overflow:hidden;">
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(122,130,137,0.04) 2px,rgba(122,130,137,0.04) 4px);pointer-events:none;"></div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.25em;color:var(--champagne-dark);margin-bottom:0.4rem;">NOD FACTOR PRODUCTIONS PRESENTS</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:0.12em;background:linear-gradient(90deg,#8A6A1A,#C9982A,#F0D060,#F7E9B0,#F0D060,#C9982A,#8A6A1A);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s linear infinite;">"A Sister's Choice" Soundtrack</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:0.12em;background:linear-gradient(90deg,#596168,#7A8289,#646C73,#D9DCDF,#646C73,#7A8289,#596168);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s linear infinite;">"A Sister's Choice" Soundtrack</div>
       <div style="font-family:'Libre Baskerville',serif;font-style:italic;color:var(--champagne-dark);margin-top:0.5rem;font-size:0.95rem;letter-spacing:0.06em;">Debuts March 15, 2026 — Available on all major platforms</div>
     </div>
 
     <!-- Pre-sale banner -->
-    <div class="presale-banner reveal" style="grid-column:1/-1; text-align:center; padding:1.8rem 2rem; margin-bottom:1rem; background:linear-gradient(135deg,rgba(54,32,22,0.92),rgba(16,12,8,0.97)); border:1px solid rgba(201,152,42,0.6); border-radius:12px; position:relative; overflow:hidden;">
-      <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(201,152,42,0.04) 2px,rgba(201,152,42,0.04) 4px);pointer-events:none;"></div>
+    <div class="presale-banner reveal" style="grid-column:1/-1; text-align:center; padding:1.8rem 2rem; margin-bottom:1rem; background:linear-gradient(135deg,rgba(54,32,22,0.92),rgba(16,12,8,0.97)); border:1px solid rgba(122,130,137,0.6); border-radius:12px; position:relative; overflow:hidden;">
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 2px,rgba(122,130,137,0.04) 2px,rgba(122,130,137,0.04) 4px);pointer-events:none;"></div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:0.75rem;letter-spacing:0.25em;color:var(--champagne-dark);margin-bottom:0.4rem;">LIMITED TIME — PRE-SALE NOW LIVE</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:0.12em;background:linear-gradient(90deg,#8A6A1A,#C9982A,#F0D060,#F7E9B0,#F0D060,#C9982A,#8A6A1A);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s linear infinite;">"Peace Baptist District" Pre-Order the Soundtrack</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:0.12em;background:linear-gradient(90deg,#596168,#7A8289,#646C73,#D9DCDF,#646C73,#7A8289,#596168);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:goldShimmer 4s linear infinite;">"Peace Baptist District" Pre-Order the Soundtrack</div>
       <div style="font-family:'Libre Baskerville',serif;font-style:italic;color:var(--champagne-dark);margin-top:0.5rem;font-size:0.95rem;letter-spacing:0.06em;">Secure your copy before the June 1, 2026 release</div>
-      <a href="https://store.nodfactorproductions.com" target="_blank" style="display:inline-block;margin-top:1.2rem;padding:0.85rem 2.2rem;background:linear-gradient(135deg,#C9982A,#F0D060);color:#0a0a0a;font-family:'Bebas Neue',sans-serif;letter-spacing:0.18em;font-size:1.05rem;text-decoration:none;border-radius:6px;font-weight:bold;">Shop the Pre-Sale →</a>
+      <a href="https://store.nodfactorproductions.com" target="_blank" style="display:inline-block;margin-top:1.2rem;padding:0.85rem 2.2rem;background:linear-gradient(135deg,#7A8289,#646C73);color:#0a0a0a;font-family:'Bebas Neue',sans-serif;letter-spacing:0.18em;font-size:1.05rem;text-decoration:none;border-radius:6px;font-weight:bold;">Shop the Pre-Sale →</a>
     </div>
 
     <!-- CARD 1: Spotify -->
@@ -1634,7 +1734,13 @@
 <div class="tape-strip"></div>
 
 <!-- SERVICES -->
-<section id="services" style="max-width:1300px; margin:0 auto; padding:6rem 2rem;">
+<section id="ecosystem" class="ecosystem-section"><div class="section-header reveal"><span class="section-label">The Nod Factor Network</span><h2 class="section-title"><span class="gold-text">One world. Many ways in.</span></h2><div class="section-line"></div><p class="ecosystem-intro">A connected home for the artists, listeners and partners who make the Nod Factor community.</p></div><div class="ecosystem-grid">
+<a class="ecosystem-card" href="https://form.jotform.com/262856172619062" target="_blank" rel="noopener noreferrer"><img src="AI%20Clone.jpg" alt="Artist portrait from Nod Factor" loading="lazy"><span class="ecosystem-label">Artist Dashboard</span><span class="ecosystem-meta">Phase II · intake open</span><span class="ecosystem-action">Submit music ↗</span></a>
+<a class="ecosystem-card" href="https://store.nodfactorproductions.com/" target="_blank" rel="noopener noreferrer"><img src="Microphone.jpg" alt="Nod Factor music and studio identity" loading="lazy"><span class="ecosystem-label">Da Store</span><span class="ecosystem-meta">Current soundtrack store</span><span class="ecosystem-action">Visit store ↗</span></a>
+<a class="ecosystem-card" href="store.html"><img src="reward-tshirt.png" alt="Nod Factor merchandise" loading="lazy"><span class="ecosystem-label">Da Merch</span><span class="ecosystem-meta">Rewards and collections</span><span class="ecosystem-action">Explore merch →</span></a>
+<a class="ecosystem-card" href="productions.html"><img src="Creativity%20Space.jpg" alt="Nod Factor creative production workspace" loading="lazy"><span class="ecosystem-label">Nod Factor Studio</span><span class="ecosystem-meta">Production &amp; media</span><span class="ecosystem-action">Explore studio →</span></a>
+<a class="ecosystem-card" href="radio.html"><img src="The%20Artist%20Singing.jpg" alt="Nod Factor artist performing live" loading="lazy"><span class="ecosystem-label">Nod Factor Radio</span><span class="ecosystem-meta">Soul · Funk · R&amp;B · Hip-Hop</span><span class="ecosystem-action">Listen live →</span></a>
+</div></section><section id="services" style="max-width:1300px; margin:0 auto; padding:6rem 2rem;">
   <div class="section-header reveal">
     <span class="section-label">What We Do</span>
     <h2 class="section-title"><span class="gold-text">Services</span></h2>
@@ -1861,7 +1967,7 @@
       </div>
       <button type="submit" class="submit-btn">Send It ▶</button>
     </form>
-    <div id="formSuccess" style="display:none; text-align:center; padding:2rem; border:1px solid var(--orange); border-radius:8px; margin-top:1rem; background:rgba(201,152,42,0.1);">
+    <div id="formSuccess" style="display:none; text-align:center; padding:2rem; border:1px solid var(--orange); border-radius:8px; margin-top:1rem; background:rgba(122,130,137,0.1);">
       <div style="font-size:2rem; margin-bottom:0.5rem;">✅</div>
       <h3 style="font-family:'Bebas Neue',sans-serif; color:var(--yellow); letter-spacing:0.05em; font-size:1.5rem;">Message Received!</h3>
       <p style="color:var(--cream); font-size:0.9rem;">We'll be in touch within 24–48 hours.<br>— Nod Factor Productions</p>
