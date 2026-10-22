@@ -136,6 +136,15 @@
     text-align:center;padding:44px 24px;color:var(--muted);font-size:13px;
     letter-spacing:1px;border-top:1px solid var(--line);margin-top:30px;
   }
+
+  .signup-form .sms-input-label{display:block;text-align:left;font-size:13px;letter-spacing:.1px;color:#e4e1da;margin:10px 0 8px}
+  .signup-form .sms-consent-options{border:1px solid #868686;border-radius:9px;padding:16px;margin:14px 0;text-align:left}
+  .signup-form .sms-consent-options legend{font-size:15px;padding:0 6px;font-weight:700;color:#f3f1e9}
+  .signup-form .sms-checkbox-label{display:flex;align-items:flex-start;gap:12px;line-height:1.5;font-size:14px;margin:13px 0;cursor:pointer;color:#f3f1e9}
+  .signup-form .sms-checkbox-label input[type="checkbox"]{appearance:auto;width:21px;height:21px;min-width:21px;margin:2px 0 0;padding:0;box-shadow:none;accent-color:#d4af37}
+  .signup-form .sms-disclosure{font-size:12px;line-height:1.7;color:#c7c7c7;text-align:left;margin:12px 0 16px}
+  .signup-form .sms-disclosure a{color:#e3c36a;text-decoration:underline}
+  .join-block a{color:#e3c36a;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -213,19 +222,49 @@
     <div class="sec-rule"></div>
 
     <div class="join-block">
-      <div class="lead">📱 Text to Join</div>
-      <div class="num">Text <span class="kw">JOIN</span> to (347) 504-1382</div>
+      <div class="lead">📱 Text Message Preferences</div>
+      <p style="margin-top:12px;line-height:1.6;">SMS sending is paused pending carrier approval. Choose the text categories you want in the optional fields below, or use our <a href="/sms-signup.html">dedicated SMS preferences form</a>.</p>
     </div>
 
-    <div class="divider-or">— OR JOIN ONLINE —</div>
+    <div class="divider-or">— JOIN REWARDS ONLINE —</div>
 
-    <form class="signup-form" name="rewards-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+    <form class="signup-form" name="rewards-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you" id="rewards-signup-form">
       <input type="hidden" name="form-name" value="rewards-signup">
+      <input type="hidden" name="sms_consent_version" value="2026-10-21-two-category">
+      <input type="hidden" name="sms_consent_source" value="vip-rewards">
+      <input type="hidden" name="sms_consent_timestamp" id="reward-consent-time">
       <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="name" placeholder="Full Name" aria-label="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" aria-label="Email Address" required>
+      <label for="reward-mobile" class="sms-input-label">Mobile number (optional; needed only for text updates)</label>
+      <input type="tel" name="phone" id="reward-mobile" autocomplete="tel" inputmode="tel" placeholder="Mobile number (optional)" aria-describedby="reward-sms-disclosure">
+      <fieldset class="sms-consent-options">
+        <legend>Optional text message preferences</legend>
+        <label class="sms-checkbox-label" for="reward-sms-marketing"><input type="checkbox" name="sms_marketing_consent" id="reward-sms-marketing" value="yes"><span><strong>Marketing texts:</strong> I agree to receive recurring promotional texts from Nod Factor Radio / Nod Factor Productions about shows, events, station promotions, merchandise and special offers.</span></label>
+        <label class="sms-checkbox-label" for="reward-sms-informational"><input type="checkbox" name="sms_informational_consent" id="reward-sms-informational" value="yes"><span><strong>Informational / song-submission texts:</strong> I agree to receive non-promotional song-submission status and related participation updates from Nod Factor Radio / Nod Factor Productions.</span></label>
+      </fieldset>
+      <p id="reward-sms-disclosure" class="sms-disclosure">Each checkbox is optional, independent and unchecked by default. You can join Rewards without a phone number or agreeing to texts. Message frequency varies, up to 4 messages per month. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See <a href="/terms.html">Terms &amp; Conditions</a> and <a href="/privacy-policy.html">Privacy Policy</a>.</p>
       <button type="submit">Join Rewards Program</button>
     </form>
+    <script>
+    (function () {
+      const form = document.getElementById('rewards-signup-form');
+      const phone = document.getElementById('reward-mobile');
+      const marketing = document.getElementById('reward-sms-marketing');
+      const informational = document.getElementById('reward-sms-informational');
+      phone.addEventListener('input', function () { phone.setCustomValidity(''); });
+      form.addEventListener('submit', function (e) {
+        const smsChosen = marketing.checked || informational.checked;
+        if (smsChosen && !phone.value.trim()) {
+          e.preventDefault();
+          phone.setCustomValidity('Enter your mobile number to opt in to text messages.');
+          phone.reportValidity();
+          return;
+        }
+        document.getElementById('reward-consent-time').value = smsChosen ? new Date().toISOString() : '';
+      });
+    })();
+    </script>
     <p class="tag" style="text-align:center;font-size:13px;margin-top:14px;">Free to join. Unsubscribe anytime.</p>
   </div>
 </section>

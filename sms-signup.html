@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Choose marketing or informational text message updates from Nod Factor Radio. Each category requires separate optional consent.">
+<title>SMS Text Preferences | Nod Factor Radio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{background:#191c21;color:#f8f8f8}
+.sms-page{max-width:880px;margin:0 auto;padding:142px 24px 80px}
+.sms-page h1{font-family:'Cinzel',serif;font-size:clamp(2rem,5vw,3.1rem);color:#eee;text-align:center}
+.sms-page .subtitle{color:#e1e1e1;font-size:1.05rem;text-align:center;max-width:690px;margin:16px auto 34px}
+.sms-form{background:#2b3037;border:1px solid #7b858f;border-radius:15px;padding:clamp(20px,4vw,40px);max-width:760px;margin:0 auto;box-shadow:0 16px 50px rgba(0,0,0,.23)}
+.sms-form .field-label{font-weight:600;display:block;margin:14px 0 7px}
+.sms-form input[type="text"],.sms-form input[type="tel"],.sms-form input[type="email"]{width:100%;min-height:46px;border-radius:7px;background:#f9f9f9;color:#17191b;border:1px solid #979ca2;font:inherit;padding:10px 13px}
+.sms-form input:focus-visible{outline:3px solid #b9d5fa;outline-offset:2px}
+.sms-form fieldset{border:1px solid #9098a1;border-radius:9px;margin:24px 0 16px;padding:15px 16px}
+.sms-form legend{font-weight:700;padding:0 8px}
+.sms-choice{display:flex;gap:12px;align-items:flex-start;line-height:1.6;cursor:pointer;margin:14px 0}
+.sms-choice input[type="checkbox"]{appearance:auto;width:22px;height:22px;min-width:22px;margin-top:3px;accent-color:#b9d5fa}
+.sms-form .disclosure{font-size:.88rem;color:#efefef;line-height:1.7;margin-bottom:20px}
+.sms-form a{color:#c1dcff;text-decoration:underline}
+.sms-form button{background:#ecf0f4;color:#1a1d20;border:0;border-radius:7px;font:600 1rem 'Montserrat',sans-serif;padding:15px 24px;cursor:pointer;width:100%}
+.sms-form button:hover{background:#dceaff}
+.sms-form .note{font-size:.85rem;color:#ddd;margin:12px 0}
+footer a{color:#f3e2ad}
+@media(max-width:650px){nav{padding:14px 5%;gap:10px}nav .brand-lockup img{width:48px;height:48px}nav .brand-lockup span{font-size:.78rem}.sms-page{padding-top:130px}}
+</style>
+</head>
+<body>
+<nav aria-label="Primary navigation">
+<div class="brand-lockup"><a href="index.html" aria-label="Nod Factor Productions home"><img src="nod-factor-logo.png" alt="Nod Factor Productions official logo"><span>Nod Factor Productions</span></a></div>
+<div><a href="index.html">Home</a></div>
+</nav>
+<main class="sms-page">
+<h1>SMS Text Preferences</h1>
+<p class="subtitle">Choose which Nod Factor Radio texts you want. Marketing messages and song-submission updates are separate programs; selecting one never selects the other.</p>
+<form class="sms-form" name="sms-preferences" id="sms-preferences" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/sms-thank-you">
+<input type="hidden" name="form-name" value="sms-preferences">
+<input type="hidden" name="sms_consent_source" value="sms-preferences-web-form">
+<input type="hidden" name="sms_consent_version" value="2026-10-21-two-category">
+<input type="hidden" name="sms_consent_timestamp" id="sms-consent-timestamp">
+<p hidden><label>Leave this field blank <input name="bot-field"></label></p>
+<label class="field-label" for="sms-name">Full name</label><input type="text" name="name" id="sms-name" autocomplete="name" required>
+<label class="field-label" for="sms-phone">Mobile phone number</label><input type="tel" name="phone" id="sms-phone" autocomplete="tel" inputmode="tel" placeholder="(555) 555-1234" pattern="[0-9+(). -]{10,20}" required>
+<label class="field-label" for="sms-email">Email (optional)</label><input type="email" name="email" id="sms-email" autocomplete="email">
+<fieldset>
+<legend>Optional consent — select the types of texts you want</legend>
+<label class="sms-choice" for="sms-marketing"><input type="checkbox" name="sms_marketing_consent" id="sms-marketing" value="yes"><span><strong>Marketing and promotional texts.</strong> I agree to receive recurring promotional texts from Nod Factor Radio / Nod Factor Productions about station programs, show announcements, events, merchandise, and special offers.</span></label>
+<label class="sms-choice" for="sms-informational"><input type="checkbox" name="sms_informational_consent" id="sms-informational" value="yes"><span><strong>Informational and song-submission texts.</strong> I agree to receive non-promotional text updates from Nod Factor Radio / Nod Factor Productions about the status of songs I submitted and related participation updates.</span></label>
+</fieldset>
+<p class="disclosure">The two checkboxes are independent, optional, and unchecked by default. Checking either box consents only to that specific category. Consent is not required to submit songs, join rewards, make a purchase, or use other Nod Factor Productions services. Message frequency varies, up to 4 messages per month. Message and data rates may apply. Reply STOP to unsubscribe; reply HELP for help. Carriers are not liable for delayed or undelivered messages. Read our <a href="/terms.html">Terms &amp; Conditions</a> and <a href="/privacy-policy.html">Privacy Policy</a>.</p>
+<button type="submit">Save My SMS Preferences</button>
+<p class="note">We are temporarily not sending SMS while our carrier campaign registration is under review. This form records your choices but does not start text delivery.</p>
+</form>
+</main>
+<footer>&copy; 2026 Nod Factor Productions<br><span class="legal-footer-links"><a href="/terms.html">Terms &amp; Conditions</a> &nbsp;|&nbsp; <a href="/privacy-policy.html">Privacy Policy</a></span></footer>
+<script>
+(function(){
+  const form = document.getElementById('sms-preferences');
+  form.addEventListener('submit', function(event) {
+    const marketing = document.getElementById('sms-marketing').checked;
+    const info = document.getElementById('sms-informational').checked;
+    if (!marketing && !info) {
+      event.preventDefault();
+      alert('To save SMS preferences, choose at least one message category. You can leave both unchecked and close this form if you do not want texts.');
+      return;
+    }
+    document.getElementById('sms-consent-timestamp').value = new Date().toISOString();
+  });
+})();
+</script>
+</body>
+</html>
